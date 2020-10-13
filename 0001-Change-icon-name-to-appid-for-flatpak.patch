@@ -1,4 +1,4 @@
-From 5b2e68dd0d10734bfdd3e2bff8b9437853778bed Mon Sep 17 00:00:00 2001
+From a24bf42ceef5a5aa4d1fac97c1d1c8c9d8d6b88d Mon Sep 17 00:00:00 2001
 From: Mikel Olasagasti Uranga <mikel@olasagasti.info>
 Date: Tue, 13 Oct 2020 22:01:15 +0200
 Subject: [PATCH] Change icon name to appid for flatpak
@@ -18,7 +18,8 @@ Subject: [PATCH] Change icon name to appid for flatpak
  .../{liferea.png => net.sourceforge.liferea.png}    | Bin
  pixmaps/scalable/Makefile.am                        |   2 +-
  .../{liferea.svg => net.sourceforge.liferea.svg}    |   0
- 14 files changed, 8 insertions(+), 8 deletions(-)
+ src/liferea_application.c                           |   2 +-
+ 15 files changed, 9 insertions(+), 9 deletions(-)
  rename pixmaps/16x16/{liferea.png => net.sourceforge.liferea.png} (100%)
  rename pixmaps/22x22/{liferea.png => net.sourceforge.liferea.png} (100%)
  rename pixmaps/24x24/{liferea.png => net.sourceforge.liferea.png} (100%)
@@ -149,6 +150,19 @@ diff --git a/pixmaps/scalable/liferea.svg b/pixmaps/scalable/net.sourceforge.lif
 similarity index 100%
 rename from pixmaps/scalable/liferea.svg
 rename to pixmaps/scalable/net.sourceforge.liferea.svg
+diff --git a/src/liferea_application.c b/src/liferea_application.c
+index 9f2f744a..e793acb4 100644
+--- a/src/liferea_application.c
++++ b/src/liferea_application.c
+@@ -347,7 +347,7 @@ liferea_application_new (int argc, char *argv[])
+ 
+ 	g_set_prgname ("liferea");
+ 	g_set_application_name (_("Liferea"));
+-	gtk_window_set_default_icon_name ("liferea");	/* GTK theme support */
++	gtk_window_set_default_icon_name ("net.sourceforge.liferea");	/* GTK theme support */
+ 	status = g_application_run (G_APPLICATION (liferea_app), argc, argv);
+ 	g_object_unref (liferea_app);
+ 
 -- 
 2.26.2
 
