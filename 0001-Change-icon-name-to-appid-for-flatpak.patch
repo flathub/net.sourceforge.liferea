@@ -1,0 +1,154 @@
+From 5b2e68dd0d10734bfdd3e2bff8b9437853778bed Mon Sep 17 00:00:00 2001
+From: Mikel Olasagasti Uranga <mikel@olasagasti.info>
+Date: Tue, 13 Oct 2020 22:01:15 +0200
+Subject: [PATCH] Change icon name to appid for flatpak
+
+---
+ glade/about.ui                                      |   2 +-
+ net.sourceforge.liferea.desktop.in                  |   2 +-
+ pixmaps/16x16/Makefile.am                           |   2 +-
+ .../{liferea.png => net.sourceforge.liferea.png}    | Bin
+ pixmaps/22x22/Makefile.am                           |   2 +-
+ .../{liferea.png => net.sourceforge.liferea.png}    | Bin
+ pixmaps/24x24/Makefile.am                           |   2 +-
+ .../{liferea.png => net.sourceforge.liferea.png}    | Bin
+ pixmaps/32x32/Makefile.am                           |   2 +-
+ .../{liferea.png => net.sourceforge.liferea.png}    | Bin
+ pixmaps/48x48/Makefile.am                           |   2 +-
+ .../{liferea.png => net.sourceforge.liferea.png}    | Bin
+ pixmaps/scalable/Makefile.am                        |   2 +-
+ .../{liferea.svg => net.sourceforge.liferea.svg}    |   0
+ 14 files changed, 8 insertions(+), 8 deletions(-)
+ rename pixmaps/16x16/{liferea.png => net.sourceforge.liferea.png} (100%)
+ rename pixmaps/22x22/{liferea.png => net.sourceforge.liferea.png} (100%)
+ rename pixmaps/24x24/{liferea.png => net.sourceforge.liferea.png} (100%)
+ rename pixmaps/32x32/{liferea.png => net.sourceforge.liferea.png} (100%)
+ rename pixmaps/48x48/{liferea.png => net.sourceforge.liferea.png} (100%)
+ rename pixmaps/scalable/{liferea.svg => net.sourceforge.liferea.svg} (100%)
+
+diff --git a/glade/about.ui b/glade/about.ui
+index e02e50d7..6a08ea0f 100644
+--- a/glade/about.ui
++++ b/glade/about.ui
+@@ -122,7 +122,7 @@ Pauli Virtanen
+ Jorma Karvonen
+ Guillaume Bernard
+ </property>
+-    <property name="logo_icon_name">liferea</property>
++    <property name="logo_icon_name">net.sourceforge.liferea</property>
+     <property name="license_type">gpl-2-0</property>
+     <child internal-child="vbox">
+       <object class="GtkBox" id="dialog-vbox23">
+diff --git a/net.sourceforge.liferea.desktop.in b/net.sourceforge.liferea.desktop.in
+index d87b6b76..70868836 100644
+--- a/net.sourceforge.liferea.desktop.in
++++ b/net.sourceforge.liferea.desktop.in
+@@ -6,7 +6,7 @@ _Comment=Read news feeds and blogs
+ _Keywords=news;feed;aggregator;blog;podcast;syndication;rss;atom
+ Exec=liferea %U
+ DBusActivatable=true
+-Icon=liferea
++Icon=net.sourceforge.liferea
+ StartupNotify=true
+ Terminal=false
+ Type=Application
+diff --git a/pixmaps/16x16/Makefile.am b/pixmaps/16x16/Makefile.am
+index d9c2a2b8..ebcad4c0 100644
+--- a/pixmaps/16x16/Makefile.am
++++ b/pixmaps/16x16/Makefile.am
+@@ -1,6 +1,6 @@
+ themedir = $(datadir)/icons/hicolor
+ size = 16x16
+ context = apps
+-EXTRA_DIST = liferea.png
++EXTRA_DIST = net.sourceforge.liferea.png
+ lifereadistpixdir = $(themedir)/$(size)/$(context)
+ lifereadistpix_DATA = $(EXTRA_DIST)
+diff --git a/pixmaps/16x16/liferea.png b/pixmaps/16x16/net.sourceforge.liferea.png
+similarity index 100%
+rename from pixmaps/16x16/liferea.png
+rename to pixmaps/16x16/net.sourceforge.liferea.png
+diff --git a/pixmaps/22x22/Makefile.am b/pixmaps/22x22/Makefile.am
+index e273de4a..0c3454d7 100644
+--- a/pixmaps/22x22/Makefile.am
++++ b/pixmaps/22x22/Makefile.am
+@@ -1,6 +1,6 @@
+ themedir = $(datadir)/icons/hicolor
+ size = 22x22
+ context = apps
+-EXTRA_DIST = liferea.png
++EXTRA_DIST = net.sourceforge.liferea.png
+ lifereadistpixdir = $(themedir)/$(size)/$(context)
+ lifereadistpix_DATA = $(EXTRA_DIST)
+diff --git a/pixmaps/22x22/liferea.png b/pixmaps/22x22/net.sourceforge.liferea.png
+similarity index 100%
+rename from pixmaps/22x22/liferea.png
+rename to pixmaps/22x22/net.sourceforge.liferea.png
+diff --git a/pixmaps/24x24/Makefile.am b/pixmaps/24x24/Makefile.am
+index cab4e613..d738f4c2 100644
+--- a/pixmaps/24x24/Makefile.am
++++ b/pixmaps/24x24/Makefile.am
+@@ -1,6 +1,6 @@
+ themedir = $(datadir)/icons/hicolor
+ size = 24x24
+ context = apps
+-EXTRA_DIST = liferea.png
++EXTRA_DIST = net.sourceforge.liferea.png
+ lifereadistpixdir = $(themedir)/$(size)/$(context)
+ lifereadistpix_DATA = $(EXTRA_DIST)
+diff --git a/pixmaps/24x24/liferea.png b/pixmaps/24x24/net.sourceforge.liferea.png
+similarity index 100%
+rename from pixmaps/24x24/liferea.png
+rename to pixmaps/24x24/net.sourceforge.liferea.png
+diff --git a/pixmaps/32x32/Makefile.am b/pixmaps/32x32/Makefile.am
+index 3c26b594..735d27ca 100644
+--- a/pixmaps/32x32/Makefile.am
++++ b/pixmaps/32x32/Makefile.am
+@@ -1,6 +1,6 @@
+ themedir = $(datadir)/icons/hicolor
+ size = 32x32
+ context = apps
+-EXTRA_DIST = liferea.png
++EXTRA_DIST = net.sourceforge.liferea.png
+ lifereadistpixdir = $(themedir)/$(size)/$(context)
+ lifereadistpix_DATA = $(EXTRA_DIST)
+diff --git a/pixmaps/32x32/liferea.png b/pixmaps/32x32/net.sourceforge.liferea.png
+similarity index 100%
+rename from pixmaps/32x32/liferea.png
+rename to pixmaps/32x32/net.sourceforge.liferea.png
+diff --git a/pixmaps/48x48/Makefile.am b/pixmaps/48x48/Makefile.am
+index 3f580f0b..1ca55ca1 100644
+--- a/pixmaps/48x48/Makefile.am
++++ b/pixmaps/48x48/Makefile.am
+@@ -1,6 +1,6 @@
+ themedir = $(datadir)/icons/hicolor
+ size = 48x48
+ context = apps
+-EXTRA_DIST = liferea.png
++EXTRA_DIST = net.sourceforge.liferea.png
+ lifereadistpixdir = $(themedir)/$(size)/$(context)
+ lifereadistpix_DATA = $(EXTRA_DIST)
+diff --git a/pixmaps/48x48/liferea.png b/pixmaps/48x48/net.sourceforge.liferea.png
+similarity index 100%
+rename from pixmaps/48x48/liferea.png
+rename to pixmaps/48x48/net.sourceforge.liferea.png
+diff --git a/pixmaps/scalable/Makefile.am b/pixmaps/scalable/Makefile.am
+index 852a08f0..e74edaf7 100644
+--- a/pixmaps/scalable/Makefile.am
++++ b/pixmaps/scalable/Makefile.am
+@@ -2,7 +2,7 @@ themedir = $(datadir)/icons/hicolor
+ size = scalable
+ context = apps
+ EXTRA_DIST = \
+-	liferea.svg \
++	net.sourceforge.liferea.svg \
+ 	liferea-symbolic.svg
+ lifereadistpixdir = $(themedir)/$(size)/$(context)
+ lifereadistpix_DATA = $(EXTRA_DIST)
+diff --git a/pixmaps/scalable/liferea.svg b/pixmaps/scalable/net.sourceforge.liferea.svg
+similarity index 100%
+rename from pixmaps/scalable/liferea.svg
+rename to pixmaps/scalable/net.sourceforge.liferea.svg
+-- 
+2.26.2
+

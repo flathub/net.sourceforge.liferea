@@ -45,6 +45,14 @@
                     "type":"archive",
                     "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.3/liferea-1.13.3.tar.bz2",
                     "sha256":"8f71dfa59bb4c14038c6444a7a72f575157fc4b7c22266b8fe056fff82bb0550"
+                },
+                {
+                    "type":"patch",
+                    "path":"0001-Change-icon-name-to-appid-for-flatpak.patch"
+                },
+                {
+                    "type": "shell",
+                    "commands": [ "autoreconf -i --force"]
                 }
             ]
         }
