@@ -45,6 +45,10 @@
                     "type":"archive",
                     "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.4/liferea-1.13.4.tar.bz2",
                     "sha256":"ac8d9ae75f493ca9f7a04b984322a97e23142d379b59020bdedab500ceca2f08"
+                },
+                {
+                    "type":"patch",
+                    "path":"0001-Update-AppData-with-release-dates.patch"
                 }
             ]
         }
