@@ -1,26 +1,24 @@
-From d7b2e5f7f4eb43584cc72ec04b1e70e1963742b9 Mon Sep 17 00:00:00 2001
-From: Mikel Olasagasti Uranga <mikel@olasagasti.info>
-Date: Sun, 27 Dec 2020 20:04:02 +0100
-Subject: [PATCH] Update AppData with release dates
+From 5b79607f6abd8b942881044ede47c2e4375faf28 Mon Sep 17 00:00:00 2001
+From: bbhtt <62639087+bbhtt@users.noreply.github.com>
+Date: Fri, 9 Apr 2021 12:29:40 +0000
+Subject: [PATCH] Update appdata with release date of 1.13.5
 
 ---
- net.sourceforge.liferea.appdata.xml.in | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ net.sourceforge.liferea.appdata.xml.in | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index e8715cb6..e7b9aa2d 100644
+index e7b9aa2d..7e531726 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
-@@ -68,6 +68,8 @@
+@@ -68,6 +68,7 @@
      <content_attribute id="money-gambling">none</content_attribute>
    </content_rating>
    <releases>
--   <release version="1.13.2"  date="2020-08-28" />
-+    <release version="1.13.4"  date="2020-12-24" />
-+    <release version="1.13.3"  date="2020-10-09" />
-+    <release version="1.13.2"  date="2020-08-28" />
-   </releases>
- </component>
++    <release version="1.13.5"  date="2021-01-10" />
+     <release version="1.13.4"  date="2020-12-24" />
+     <release version="1.13.3"  date="2020-10-09" />
+     <release version="1.13.2"  date="2020-08-28" />
 -- 
-2.29.2
+2.31.1
 

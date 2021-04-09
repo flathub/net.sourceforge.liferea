@@ -1,7 +1,7 @@
 {
     "app-id":"net.sourceforge.liferea",
     "runtime":"org.gnome.Platform",
-    "runtime-version":"3.38",
+    "runtime-version":"40",
     "sdk":"org.gnome.Sdk",
     "command":"liferea",
     "cleanup":[
@@ -43,8 +43,8 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.4/liferea-1.13.4.tar.bz2",
-                    "sha256":"ac8d9ae75f493ca9f7a04b984322a97e23142d379b59020bdedab500ceca2f08"
+                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.5/liferea-1.13.5.tar.bz2",
+                    "sha256":"cb12c4ff07d454872d208235e3060ce45709a142d5e8fe7580ad32d7e9100442"
                 },
                 {
                     "type":"patch",
