@@ -19,7 +19,7 @@
         "--socket=pulseaudio",
         "--socket=fallback-x11",
         "--socket=wayland",
-	  "--filesystem=xdg-download",
+         "--filesystem=xdg-download", # Remove if fixed: https://github.com/lwindolf/liferea/issues/983
         "--talk-name=org.freedesktop.secrets"
     ],
     "modules":[
@@ -55,4 +55,3 @@
         }
     ]
 }
-
