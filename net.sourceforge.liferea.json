@@ -19,6 +19,8 @@
         "--socket=pulseaudio",
         "--socket=fallback-x11",
         "--socket=wayland",
+        /* Remove if #983 is fixed */
+        "--filesystem=xdg-download",
         "--talk-name=org.freedesktop.secrets"
     ],
     "modules":[
@@ -54,4 +56,3 @@
         }
     ]
 }
-
