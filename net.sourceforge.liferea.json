@@ -19,6 +19,7 @@
         "--socket=pulseaudio",
         "--socket=fallback-x11",
         "--socket=wayland",
+	  "--filesystem=xdg-download",
         "--talk-name=org.freedesktop.secrets"
     ],
     "modules":[
