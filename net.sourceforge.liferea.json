@@ -19,8 +19,6 @@
         "--socket=pulseaudio",
         "--socket=fallback-x11",
         "--socket=wayland",
-        /* Remove if #983 is fixed */
-        "--filesystem=xdg-download",
         "--talk-name=org.freedesktop.secrets"
     ],
     "modules":[
@@ -45,12 +43,12 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.5/liferea-1.13.5.tar.bz2",
-                    "sha256":"cb12c4ff07d454872d208235e3060ce45709a142d5e8fe7580ad32d7e9100442"
+                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.6/liferea-1.13.6.tar.bz2",
+                    "sha256":"c192b891c944061f9f5261f67cdf88c22cae05e7ca04cf6218d8688c4a73d298"
                 },
                 {
                     "type":"patch",
-                    "path":"0001-Update-AppData-with-release-dates.patch"
+                    "path":"0001-Update-appdata-to-1.13.6.patch"
                 }
             ]
         }
