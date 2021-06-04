@@ -49,6 +49,10 @@
                 {
                     "type":"patch",
                     "path":"0001-Update-appdata-to-1.13.6.patch"
+                },
+                {
+                    "type":"patch",
+                    "path":"pr1001-update-appdata-screenshots.patch"
                 }
             ]
         }
