@@ -1,7 +1,7 @@
 {
     "app-id":"net.sourceforge.liferea",
     "runtime":"org.gnome.Platform",
-    "runtime-version":"40",
+    "runtime-version":"41",
     "sdk":"org.gnome.Sdk",
     "command":"liferea",
     "cleanup":[
@@ -19,6 +19,7 @@
         "--socket=pulseaudio",
         "--socket=fallback-x11",
         "--socket=wayland",
+	"--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.freedesktop.secrets"
     ],
     "modules":[
@@ -33,8 +34,8 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://download.gnome.org/sources/libpeas/1.28/libpeas-1.28.0.tar.xz",
-                    "sha256":"42d91993b46ed50f16add6d9577ecc22beb8e2dffa7101e2232c2b63733b8b15"
+                    "url":"https://download.gnome.org/sources/libpeas/1.30/libpeas-1.30.0.tar.xz",
+                    "sha256":"0bf5562e9bfc0382a9dcb81f64340787542568762a3a367d9d90f6185898b9a3"
                 }
             ]
         },
@@ -43,16 +44,16 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.6/liferea-1.13.6.tar.bz2",
-                    "sha256":"c192b891c944061f9f5261f67cdf88c22cae05e7ca04cf6218d8688c4a73d298"
+                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.7/liferea-1.13.7.tar.bz2",
+                    "sha256":"4989879444ac79ced59766b4e387bf524ccb5858644d5cc1df7fe8ba0e2cc2b8"
                 },
                 {
                     "type":"patch",
-                    "path":"0001-Update-appdata-to-1.13.6.patch"
+                    "path":"0001-Update-appdata-to-1.13.7.patch"
                 },
                 {
                     "type":"patch",
-                    "path":"pr1001-update-appdata-screenshots.patch"
+                    "path":"0001-Update-appdata-screenshot.patch"
                 }
             ]
         }

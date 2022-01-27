@@ -1,0 +1,39 @@
+From cd341a5e375dd32099467e03d7c22348967bcd97 Mon Sep 17 00:00:00 2001
+From: bbhtt <62639087+bbhtt@users.noreply.github.com>
+Date: Thu, 27 Jan 2022 20:29:15 +0530
+Subject: [PATCH] Update appdata screenshot to satisfy appstream
+
+---
+ net.sourceforge.liferea.appdata.xml.in | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
+index 4d55b731..cc9b7cf8 100644
+--- a/net.sourceforge.liferea.appdata.xml.in
++++ b/net.sourceforge.liferea.appdata.xml.in
+@@ -26,14 +26,14 @@
+     </ul>
+   </description>
+   <screenshots>
+-    <screenshot type="default"><image width="1200" height="675">https://lzone.de/liferea/screenshots/screenshot2.png</image></screenshot>
+-    <screenshot type="default"><image width="1200" height="675">https://lzone.de/liferea/screenshots/screenshot3.png</image></screenshot>
+-    <screenshot type="default"><image width="1200" height="675">https://lzone.de/liferea/screenshots/screenshot4.png</image></screenshot>
+-    <screenshot type="default"><image width="1200" height="675">https://lzone.de/liferea/screenshots/screenshot5.png</image></screenshot>
+-    <screenshot type="default"><image width="1200" height="675">https://lzone.de/liferea/screenshots/screenshot6.png</image></screenshot>
+-    <screenshot type="default"><image width="793" height="464">https://lzone.de/liferea/screenshots/screenshot7.png</image></screenshot>
+-    <screenshot type="default"><image width="926" height="504">https://lzone.de/liferea/screenshots/screenshot8.png</image></screenshot>
+-    <screenshot type="default"><image width="800" height="450">https://lzone.de/liferea/screenshots/screenshot9.png</image></screenshot>
++    <screenshot type="default"><image width="833" height="656">https://lzone.de/liferea/screenshots/screenshot2.png</image></screenshot>
++    <screenshot type="default"><image width="837" height="657">https://lzone.de/liferea/screenshots/screenshot3.png</image></screenshot>
++    <screenshot type="default"><image width="837" height="657">https://lzone.de/liferea/screenshots/screenshot4.png</image></screenshot>
++    <screenshot type="default"><image width="837" height="657">https://lzone.de/liferea/screenshots/screenshot5.png</image></screenshot>
++    <screenshot type="default"><image width="837" height="657">https://lzone.de/liferea/screenshots/screenshot6.png</image></screenshot>
++    <screenshot type="default"><image width="642" height="438">https://lzone.de/liferea/screenshots/screenshot7.png</image></screenshot>
++    <screenshot type="default"><image width="834" height="657">https://lzone.de/liferea/screenshots/screenshot8.png</image></screenshot>
++    <screenshot type="default"><image width="837" height="657">https://lzone.de/liferea/screenshots/screenshot9.png</image></screenshot>
+   </screenshots>
+   <url type="homepage">https://lzone.de/liferea/</url>
+   <update_contact>liferea-devel@lists.sf.net</update_contact>
+-- 
+2.35.0
+
