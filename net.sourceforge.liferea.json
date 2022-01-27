@@ -43,16 +43,12 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.6/liferea-1.13.6.tar.bz2",
-                    "sha256":"c192b891c944061f9f5261f67cdf88c22cae05e7ca04cf6218d8688c4a73d298"
+                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.7/liferea-1.13.7.tar.bz2",
+                    "sha256":"4989879444ac79ced59766b4e387bf524ccb5858644d5cc1df7fe8ba0e2cc2b8"
                 },
                 {
                     "type":"patch",
-                    "path":"0001-Update-appdata-to-1.13.6.patch"
-                },
-                {
-                    "type":"patch",
-                    "path":"pr1001-update-appdata-screenshots.patch"
+                    "path":"0001-Update-appdata-to-1.13.7.patch"
                 }
             ]
         }
