@@ -9,6 +9,8 @@
         "/lib/pkgconfig",
         "/share/pkgconfig",
         "/share/aclocal",
+        "/man",
+        "/share/man",
         "*.la",
         "*.a"
     ],
@@ -39,6 +41,26 @@
                 }
             ]
         },
+
+        {
+            "name": "git",
+            "make-args": [
+                "NO_TCLTK=1",
+                "INSTALL_SYMLINKS=1"
+            ],
+            "make-install-args": [
+                "NO_TCLTK=1",
+                "INSTALL_SYMLINKS=1"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.35.1.tar.gz",
+                    "sha256": "9845a37dd01f9faaa7d8aa2078399d3aea91b43819a5efea6e2877b0af09bd43"
+                }
+            ]
+        },
+
         {
             "name":"liferea",
             "sources":[
@@ -54,6 +76,18 @@
                 {
                     "type":"patch",
                     "path":"0001-Update-appdata-screenshot.patch"
+                },
+                {
+                     "type":"patch",
+                     "path":"0001-getfocus-plugin.patch"
+                },
+                {
+                     "type":"patch",
+                     "path":"0001-pane-plugin.patch"
+                },
+                {
+                     "type":"patch",
+                     "path":"0001-plugin-installer.patch"
                 }
             ]
         }
