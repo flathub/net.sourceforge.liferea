@@ -9,6 +9,8 @@
         "/lib/pkgconfig",
         "/share/pkgconfig",
         "/share/aclocal",
+        "/man",
+        "/share/man",
         "*.la",
         "*.a"
     ],
