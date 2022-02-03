@@ -76,7 +76,7 @@
                 {
                     "type":"patch",
                     "path":"0001-Update-appdata-screenshot.patch"
-                }
+                },
                 {
                      "type":"patch",
                      "path":"0001-getfocus-plugin.patch"
