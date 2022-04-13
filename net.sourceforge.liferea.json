@@ -1,7 +1,7 @@
 {
     "app-id":"net.sourceforge.liferea",
     "runtime":"org.gnome.Platform",
-    "runtime-version":"41",
+    "runtime-version":"42",
     "sdk":"org.gnome.Sdk",
     "command":"liferea",
     "cleanup":[
@@ -36,8 +36,8 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://download.gnome.org/sources/libpeas/1.30/libpeas-1.30.0.tar.xz",
-                    "sha256":"0bf5562e9bfc0382a9dcb81f64340787542568762a3a367d9d90f6185898b9a3"
+                    "url":"https://download.gnome.org/sources/libpeas/1.32/libpeas-1.32.0.tar.xz",
+                    "sha256":"d625520fa02e8977029b246ae439bc218968965f1e82d612208b713f1dcc3d0e"
                 }
             ]
         },
@@ -55,8 +55,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.35.1.tar.gz",
-                    "sha256": "9845a37dd01f9faaa7d8aa2078399d3aea91b43819a5efea6e2877b0af09bd43"
+                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.35.2.tar.xz",
+                    "sha256": "c73d0c4fa5dcebdb2ccc293900952351cc5fb89224bb133c116305f45ae600f3"
                 }
             ]
         },
@@ -66,28 +66,12 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.7/liferea-1.13.7.tar.bz2",
-                    "sha256":"4989879444ac79ced59766b4e387bf524ccb5858644d5cc1df7fe8ba0e2cc2b8"
+                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.8/liferea-1.13.8.tar.bz2",
+                    "sha256":"1008ae805192816b190f07c6c8e094256bc5b88062f5daf1a710250bed294874"
                 },
                 {
                     "type":"patch",
-                    "path":"0001-Update-appdata-to-1.13.7.patch"
-                },
-                {
-                    "type":"patch",
-                    "path":"0001-Update-appdata-screenshot.patch"
-                },
-                {
-                     "type":"patch",
-                     "path":"0001-getfocus-plugin.patch"
-                },
-                {
-                     "type":"patch",
-                     "path":"0001-pane-plugin.patch"
-                },
-                {
-                     "type":"patch",
-                     "path":"0001-plugin-installer.patch"
+                    "path":"0001-Update-appdata-to-1.13.8.patch"
                 }
             ]
         }

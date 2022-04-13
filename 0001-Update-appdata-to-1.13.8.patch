@@ -1,24 +1,24 @@
-From 393281dce3b961ed765e1ada100023031fa372d0 Mon Sep 17 00:00:00 2001
+From fa031a710cc030214ccf963e84e2fde84a04e78c Mon Sep 17 00:00:00 2001
 From: bbhtt <62639087+bbhtt@users.noreply.github.com>
-Date: Thu, 27 Jan 2022 20:02:43 +0530
-Subject: [PATCH] Update appdata to 1.13.7
+Date: Wed, 13 Apr 2022 21:20:18 +0530
+Subject: [PATCH] Update appdata to 1.13.8
 
 ---
  net.sourceforge.liferea.appdata.xml.in | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index 07f232bb..4d55b731 100644
+index cc9b7cf8..cedc7e0e 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
 @@ -67,6 +67,7 @@
      <content_attribute id="money-gambling">none</content_attribute>
    </content_rating>
    <releases>
-+    <release version="1.13.7"  date="2021-12-07" />
++    <release version="1.13.8"  date="2022-04-05" />
+     <release version="1.13.7"  date="2021-12-07" />
      <release version="1.13.6"  date="2021-05-07" />
      <release version="1.13.5"  date="2021-01-10" />
-     <release version="1.13.4"  date="2020-12-24" />
 -- 
-2.35.0
+2.35.2
 
