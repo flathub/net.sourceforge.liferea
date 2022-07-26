@@ -21,7 +21,7 @@
         "--socket=pulseaudio",
         "--socket=fallback-x11",
         "--socket=wayland",
-	"--talk-name=org.freedesktop.Notifications",
+        "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.freedesktop.secrets"
     ],
     "modules":[
@@ -55,8 +55,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.35.2.tar.xz",
-                    "sha256": "c73d0c4fa5dcebdb2ccc293900952351cc5fb89224bb133c116305f45ae600f3"
+                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.1.tar.xz",
+                    "sha256": "c8162c6b8b8f1c5db706ab01b4ee29e31061182135dc27c4860224aaec1b3500"
                 }
             ]
         },
@@ -66,12 +66,12 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.8/liferea-1.13.8.tar.bz2",
-                    "sha256":"1008ae805192816b190f07c6c8e094256bc5b88062f5daf1a710250bed294874"
+                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.9/liferea-1.13.9.tar.bz2",
+                    "sha256":"20fdd34a69d17a415e6f17818792517a079279dc7ecb6e1ee17f66b8c0328459"
                 },
                 {
                     "type":"patch",
-                    "path":"0001-Update-appdata-to-1.13.8.patch"
+                    "path":"0001-Update-appdata-to-1.13.9.patch"
                 }
             ]
         }
