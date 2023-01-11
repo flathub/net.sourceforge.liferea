@@ -36,8 +36,8 @@
             "sources":[
                 {
                     "type":"archive",
-                    "url":"https://download.gnome.org/sources/libpeas/1.32/libpeas-1.32.0.tar.xz",
-                    "sha256":"d625520fa02e8977029b246ae439bc218968965f1e82d612208b713f1dcc3d0e"
+                    "url":"https://download.gnome.org/sources/libpeas/1.34/libpeas-1.34.0.tar.xz",
+                    "sha256":"4305f715dab4b5ad3e8007daec316625e7065a94e63e25ef55eb1efb964a7bf0"
                 }
             ]
         },
@@ -55,8 +55,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.1.tar.xz",
-                    "sha256": "c8162c6b8b8f1c5db706ab01b4ee29e31061182135dc27c4860224aaec1b3500"
+                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.39.0.tar.xz",
+                    "sha256": "ba199b13fb5a99ca3dec917b0bd736bc0eb5a9df87737d435eddfdf10d69265b"
                 }
             ]
         },
@@ -65,13 +65,10 @@
             "name":"liferea",
             "sources":[
                 {
-                    "type":"archive",
-                    "url":"https://github.com/lwindolf/liferea/releases/download/v1.13.9/liferea-1.13.9.tar.bz2",
-                    "sha256":"20fdd34a69d17a415e6f17818792517a079279dc7ecb6e1ee17f66b8c0328459"
-                },
-                {
-                    "type":"patch",
-                    "path":"0001-Update-appdata-to-1.13.9.patch"
+                    "type":"git",
+                    "url":"https://github.com/lwindolf/liferea.git",
+                    "tag": "v1.14.0",
+                    "commit":"3cdf6f7a85300c9a60c73f6654845c590eadf86c"
                 }
             ]
         }
