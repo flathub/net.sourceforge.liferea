@@ -1,0 +1,24 @@
+From d783dfade7f45efff61581e474a99409cdca9ee6 Mon Sep 17 00:00:00 2001
+From: Mikel Olasagasti Uranga <mikel@olasagasti.info>
+Date: Wed, 11 Jan 2023 09:43:52 +0100
+Subject: [PATCH] Fix appdata
+
+Remove a small portion of the release description in order to pass
+validation with appstream-util.
+---
+ net.sourceforge.liferea.appdata.xml.in | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
+index c35ececf5..bc76781f0 100644
+--- a/net.sourceforge.liferea.appdata.xml.in
++++ b/net.sourceforge.liferea.appdata.xml.in
+@@ -201,8 +201,6 @@
+            Now Liferea will never allow the panes to be smaller than 5% in height or width
+            regarding to there orientation. If a pane is smaller than 5% height/width it will be
+            set to 30% width or 50% height on startup.
+-
+-           The intention here is that panes are never invisible after startup.
+         </li>
+         <li>
+           Wait for network to be fully available before updating: sometimes when real internet
