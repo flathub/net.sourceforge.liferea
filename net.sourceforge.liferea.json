@@ -55,8 +55,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.39.2.tar.xz",
-                    "sha256": "475f75f1373b2cd4e438706185175966d5c11f68c4db1e48c26257c43ddcf2d6"
+                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.40.0.tar.xz",
+                    "sha256": "b17a598fbf58729ef13b577465eb93b2d484df1201518b708b5044ff623bf46d"
                 }
             ]
         },
@@ -67,8 +67,8 @@
                 {
                     "type":"git",
                     "url":"https://github.com/lwindolf/liferea.git",
-                    "tag": "v1.14.1",
-                    "commit":"3d955047162d81f872b16ee5b07e9e1b99768f32"
+                    "tag": "v1.14.2",
+                    "commit":"dc44aff6c54662c8e3a50825c1889854c1cef975"
                 },
                 {
                     "type":"patch",
