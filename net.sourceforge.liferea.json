@@ -67,16 +67,12 @@
                 {
                     "type":"git",
                     "url":"https://github.com/lwindolf/liferea.git",
-                    "tag": "v1.14.2",
-                    "commit":"dc44aff6c54662c8e3a50825c1889854c1cef975"
+                    "tag": "v1.14.4",
+                    "commit":"a0ab1c73436b460ccfed2eb19d857a979132ed3a"
                 },
                 {
                     "type":"patch",
                     "path":"appdata.patch"
-                },
-                {
-                    "type":"patch",
-                    "path":"0001-Revert-ed860fa-to-avoid-crashes-since-1.14.1.patch"
                 }
             ]
         }
