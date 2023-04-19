@@ -1,34 +1,44 @@
-From 3a6c8e9b871e6c77323a62ef78cfc911c78b938f Mon Sep 17 00:00:00 2001
+From 4a1cdbf61c1176dd7748e8904c11c24af6499d3f Mon Sep 17 00:00:00 2001
 From: bbhtt <bbhtt.zn0i8@slmail.me>
-Date: Sat, 1 Apr 2023 06:32:12 +0530
-Subject: [PATCH] Update appdata
+Date: Wed, 19 Apr 2023 06:13:03 +0530
+Subject: [PATCH] Update appdata for 1.15.0
 
 ---
- net.sourceforge.liferea.appdata.xml.in | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ net.sourceforge.liferea.appdata.xml.in | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index 8fa2c170..59a4d4fd 100644
+index 2be3345b..b5bd36b9 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
-@@ -105,6 +105,17 @@
+@@ -105,6 +105,27 @@
      <content_attribute id="money-gambling">none</content_attribute>
    </content_rating>
    <releases>
-+    <release date="2023-03-31" version="1.14.4">
++    <release date="2023-04-17" version="1.15.0">
 +      <description>
-+        <p>1.14 is not as stable yet as intended and is suffering from startup race conditions. This bugfix release tries to further eliminate those issues</p>
++        <p>This is the first release of the new unstable line 1.15. The current idea is to release a bit
++        faster than every two years. So not so much features will be introduced before 1.16</p>
 +        <ul>Changes
-+          <li>Fixes #1217, #1224: Endless recursion in 1.14.3 (reported by uduecoder, mokraemer)</li>
-+          <li>Additional fixes for #1214: crash in conf_get_bool_value_from_schema (reported by Mikel Olasagasti)</li>
-+          <li>Fixes a g_object_unref warning on shutdown</li>
-+          <li>Drops a debug output in the plugin installer</li>
++         <li>Fixes #1214: crash in conf_get_bool_value_from_schema (mozbugbox, reported by Mikel Olasagasti)</li>
++         <li>Fixes #1215: failed to build in launchpad PPA due to auto_test permission issue (reported by PandaJim)</li>
++         <li>Fixes #1212: 1.14.1 crash when refreshing feeds. (mozbugbox, reported by Froggy232)</li>
++         <li>Fixes #1198: FreshRSS logging in correctly but can't get posts (reported by Roger Gonzalez)</li>
++         <li>Fixes a memory leak when reloading CSS (Lars Windolf)</li>
++         <li>Fixes CVE-2023-1350: RCE vulnerability on feed enrichment (patch by Alexander Erwin Ittner)</li>
++         <li>Fixes #1200: Crash on double free (mozbugbox)</li>
++         <li>Improve #1192 be reordering widget creation order (Lars Windolf)</li>
++         <li>Improvements to the libnotify plugin (Tasos Sahanidis)</li>
++         <li>Fixes a g_object_unref warning on shutdown</li>
++         <li>Drops a debug output in the plugin installer</li>
++         <li>Drop webkit inspector from installable plugins in favour of --debug-html</li>
++         <li>Drop pane plugin from default plugins</li>
 +        </ul>
 +      </description>
 +    </release>
-     <release date="2023-03-13" version="1.14.1">
+     <release date="2023-03-24" version="1.14.3">
        <description>
-         <p>CVE-2023-1350 Remote code execution on feed enrichment</p>
--- 
+         <p>This is another 1.14 bugfix release to address a crash affecting some users and a build issue when running tests</p>
+--
 2.40.0
 
