@@ -1,34 +1,33 @@
-From 3a6c8e9b871e6c77323a62ef78cfc911c78b938f Mon Sep 17 00:00:00 2001
+From f6dc00897347c97f6d8ff532d5a094bd68f56704 Mon Sep 17 00:00:00 2001
 From: bbhtt <bbhtt.zn0i8@slmail.me>
-Date: Sat, 1 Apr 2023 06:32:12 +0530
-Subject: [PATCH] Update appdata
+Date: Sun, 9 Apr 2023 16:23:16 +0530
+Subject: [PATCH] Update appdata for 1.14.5 release
 
 ---
- net.sourceforge.liferea.appdata.xml.in | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ net.sourceforge.liferea.appdata.xml.in | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index 8fa2c170..59a4d4fd 100644
+index 3ecc0c38..c929ff86 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
-@@ -105,6 +105,17 @@
+@@ -105,6 +105,16 @@
      <content_attribute id="money-gambling">none</content_attribute>
    </content_rating>
    <releases>
-+    <release date="2023-03-31" version="1.14.4">
++    <release date="2023-04-09" version="1.14.5">
 +      <description>
-+        <p>1.14 is not as stable yet as intended and is suffering from startup race conditions. This bugfix release tries to further eliminate those issues</p>
++        <p>Stability release for 1.14 branch</p>
 +        <ul>Changes
-+          <li>Fixes #1217, #1224: Endless recursion in 1.14.3 (reported by uduecoder, mokraemer)</li>
-+          <li>Additional fixes for #1214: crash in conf_get_bool_value_from_schema (reported by Mikel Olasagasti)</li>
-+          <li>Fixes a g_object_unref warning on shutdown</li>
-+          <li>Drops a debug output in the plugin installer</li>
++         <li>Fixes #1127: corrupted double-linked list (reported by Paul Gevers)</li>
++         <li>Fixes #1229: assertion when deleting feeds too quickly (reported by Tasos Sahanidis)</li>
++         <li>Fixes #1223: format and cast errors (reported by Paul Gevers)</li>
 +        </ul>
 +      </description>
 +    </release>
-     <release date="2023-03-13" version="1.14.1">
+     <release date="2023-03-31" version="1.14.4">
        <description>
-         <p>CVE-2023-1350 Remote code execution on feed enrichment</p>
+         <p>1.14 is not as stable yet as intended and is suffering from startup race conditions. This bugfix release tries to further eliminate those issues</p>
 -- 
 2.40.0
 
