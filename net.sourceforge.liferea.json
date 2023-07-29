@@ -16,6 +16,7 @@
     ],
     "finish-args":[
         "--device=dri",
+        "--filesystem=xdg-download",
         "--share=ipc",
         "--share=network",
         "--socket=pulseaudio",
