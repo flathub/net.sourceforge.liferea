@@ -86,7 +86,11 @@
                 },
                 {
                     "type":"patch",
-                    "path":"appdata.patch"
+                    "path":"patches/appdata.patch"
+                },
+                {
+                    "type":"patch",
+                    "path":"patches/download.patch"
                 }
             ]
         }
