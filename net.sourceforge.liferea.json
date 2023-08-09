@@ -40,7 +40,11 @@
                 {
                     "type":"archive",
                     "url":"https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz",
-                    "sha256":"297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c"
+                    "sha256":"297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "libpeas"
+                    }
                 }
             ]
         },
@@ -59,7 +63,13 @@
                 {
                     "type": "archive",
                     "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz",
-                    "sha256": "e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040"
+                    "sha256": "e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 5350,
+                        "stable-only": true,
+                        "url-template": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz"
+                    }
                 }
             ]
         },
@@ -73,7 +83,12 @@
                 {
                     "type": "archive",
                     "sha256": "58d1e7608c12404f0229a3d9a4953d0d00c18040504498b483305bcb3de907a5",
-                    "url": "https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.xz"
+                    "url": "https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.xz",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 109,
+                        "url-template": "https://github.com/aria2/aria2/releases/download/release-$version/aria2-$version.tar.xz"
+                    }
                 }
             ]
         },
@@ -106,7 +121,13 @@
                 {
                     "type": "archive",
                     "url": "https://webkitgtk.org/releases/webkitgtk-2.40.5.tar.xz",
-                    "sha256": "7de051a263668621d91a61a5eb1c3771d1a7cec900043d4afef06c326c16037f"
+                    "sha256": "7de051a263668621d91a61a5eb1c3771d1a7cec900043d4afef06c326c16037f",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://webkitgtk.org/releases/",
+                        "version-pattern": "LATEST-STABLE-(\\d[\\.\\d]+\\d)",
+                        "url-template": "https://webkitgtk.org/releases/webkitgtk-$version.tar.xz"
+                    }
                 }
             ]
         },
