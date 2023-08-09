@@ -27,6 +27,8 @@
     ],
     "modules":[
         "shared-modules/intltool/intltool-0.51.json",
+        /* Remove when Liferea releases a version with webkit2gtk-4.1 */
+        "shared-modules/libsoup/libsoup-2.4.json",
         {
             "name":"libpeas",
             "buildsystem" : "meson",
@@ -72,6 +74,39 @@
                     "type": "archive",
                     "sha256": "58d1e7608c12404f0229a3d9a4953d0d00c18040504498b483305bcb3de907a5",
                     "url": "https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.xz"
+                }
+            ]
+        },
+        /* Remove unifdef, webkit2gtk-4.0 when Liferea releases a version with webkit2gtk-4.1 */
+        {
+            "name": "unifdef",
+            "no-autogen": true,
+            "make-install-args": [
+                "prefix=${FLATPAK_DEST}"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz",
+                    "sha256": "43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400"
+                }
+            ],
+            "cleanup": [ "*" ]
+        },
+        {
+            "name": "webkit2gtk-4.0",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DPORT=GTK",
+                "-DENABLE_BUBBLEWRAP_SANDBOX=OFF",
+                "-DENABLE_DOCUMENTATION=OFF",
+                "-DUSE_SOUP2=ON"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.40.5.tar.xz",
+                    "sha256": "7de051a263668621d91a61a5eb1c3771d1a7cec900043d4afef06c326c16037f"
                 }
             ]
         },
