@@ -1,7 +1,7 @@
 {
     "app-id":"net.sourceforge.liferea",
     "runtime":"org.gnome.Platform",
-    "runtime-version":"42",
+    "runtime-version":"44",
     "sdk":"org.gnome.Sdk",
     "command":"liferea",
     "cleanup":[
@@ -27,6 +27,8 @@
     ],
     "modules":[
         "shared-modules/intltool/intltool-0.51.json",
+        /* Remove when Liferea releases a version with webkit2gtk-4.1 */
+        "shared-modules/libsoup/libsoup-2.4.json",
         {
             "name":"libpeas",
             "buildsystem" : "meson",
@@ -38,7 +40,11 @@
                 {
                     "type":"archive",
                     "url":"https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz",
-                    "sha256":"297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c"
+                    "sha256":"297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "libpeas"
+                    }
                 }
             ]
         },
@@ -57,7 +63,13 @@
                 {
                     "type": "archive",
                     "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz",
-                    "sha256": "e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040"
+                    "sha256": "e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 5350,
+                        "stable-only": true,
+                        "url-template": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz"
+                    }
                 }
             ]
         },
@@ -71,7 +83,51 @@
                 {
                     "type": "archive",
                     "sha256": "58d1e7608c12404f0229a3d9a4953d0d00c18040504498b483305bcb3de907a5",
-                    "url": "https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.xz"
+                    "url": "https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.xz",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 109,
+                        "url-template": "https://github.com/aria2/aria2/releases/download/release-$version/aria2-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        /* Remove unifdef, webkit2gtk-4.0 when Liferea releases a version with webkit2gtk-4.1 */
+        {
+            "name": "unifdef",
+            "no-autogen": true,
+            "make-install-args": [
+                "prefix=${FLATPAK_DEST}"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz",
+                    "sha256": "43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400"
+                }
+            ],
+            "cleanup": [ "*" ]
+        },
+        {
+            "name": "webkit2gtk-4.0",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DPORT=GTK",
+                "-DENABLE_BUBBLEWRAP_SANDBOX=OFF",
+                "-DENABLE_DOCUMENTATION=OFF",
+                "-DUSE_SOUP2=ON"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.40.5.tar.xz",
+                    "sha256": "7de051a263668621d91a61a5eb1c3771d1a7cec900043d4afef06c326c16037f",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://webkitgtk.org/releases/",
+                        "version-pattern": "LATEST-STABLE-(\\d[\\.\\d]+\\d)",
+                        "url-template": "https://webkitgtk.org/releases/webkitgtk-$version.tar.xz"
+                    }
                 }
             ]
         },
