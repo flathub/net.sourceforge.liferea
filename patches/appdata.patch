@@ -1,20 +1,44 @@
-From 4a1cdbf61c1176dd7748e8904c11c24af6499d3f Mon Sep 17 00:00:00 2001
+From c2cd98eb461612838e1a7a695942150a555f852b Mon Sep 17 00:00:00 2001
 From: bbhtt <bbhtt.zn0i8@slmail.me>
 Date: Wed, 19 Apr 2023 06:13:03 +0530
-Subject: [PATCH] Update appdata for 1.15.0
+Subject: [PATCH] Update appdata for 1.15.1
 
 ---
- net.sourceforge.liferea.appdata.xml.in | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ net.sourceforge.liferea.appdata.xml.in | 45 ++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
 
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index 2be3345b..b5bd36b9 100644
+index 820c1d3f..5d47efe4 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
-@@ -105,6 +105,27 @@
+@@ -101,6 +101,51 @@
      <content_attribute id="money-gambling">none</content_attribute>
    </content_rating>
    <releases>
++    <release date="2023-08-14" version="1.15.1">
++      <description>
++        <p>This is a new feature release. It introduces the long awaited switch to libsoup3 and libwebkit2gtk-4.1.
++        Thanks to many testers helping testing the latest code from git some errors were ironed out already. Still there is an issue remaining where feed updates are getting stuck when updating while DNS resolution/Wifi/network... fails. Please comment if you also experience this issue! Also noteworthy is a simplification of the debug handling which removes three CLI parameters --debug-performance, --debug-trace and --debug-verbose</p>
++        <ul>Changes
++         <li>Update to libsoup3 and libwebkit2gtk-4.1 (Lars Windolf)</li>
++         <li>Fixes #1285: HTTP 304 incorrectly caused error state (Rich Coe)</li>
++         <li>Fixes #1272: Crash on moving feed into new folder (Lars Windolf)</li>
++         <li>Fixes #1262: Plugin installer: duplicate punctuation (Christian Stadelmann)</li>
++         <li>Fixes #1250: Incorrect item_id when downloading AMP URLs (Alexandre Erwin Ittner)</li>
++         <li>Fixes #1248: Can't maximize for reading feeds (Lars Windolf)</li>
++         <li>Fixes #1242: Dropping not-functioning Pocket bookmark URL (Lars Windolf)</li>
++         <li>Fixes #1241: Dropping not-functioning identi.ca bookmark URL (Lars Windolf)</li>
++         <li>Fixes #1240: TypeError on add-bookmark-site preferences (Lucidiot)</li>
++         <li>Many fixes for static code analysis warnings (Lars Windolf)</li>
++         <li>Simplified debug handling. Drop --debug-performance --debug-trace and --debug-verbose CLI parameters</li>
++         <li>Removed stale Deutsche Welle Brasil feed from pt-BR default feed list (Alexandre Erwin Ittner)</li>
++         <li>Updated appdata description and summary (bbhtt)</li>
++         <li>Add Russian user documentation (slichtzzz)</li>
++         <li>Updated Czech translation (Amerey)</li>
++         <li>Updated Brazilian Portugese translation (Fúlvio Alves)</li>
++        </ul>
++      </description>
++    </release>
 +    <release date="2023-04-17" version="1.15.0">
 +      <description>
 +        <p>This is the first release of the new unstable line 1.15. The current idea is to release a bit
@@ -39,6 +63,6 @@ index 2be3345b..b5bd36b9 100644
      <release date="2023-03-24" version="1.14.3">
        <description>
          <p>This is another 1.14 bugfix release to address a crash affecting some users and a build issue when running tests</p>
---
-2.40.0
+-- 
+2.41.0
 
