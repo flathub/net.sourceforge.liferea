@@ -105,6 +105,10 @@
                 {
                     "type":"patch",
                     "path":"patches/download.patch"
+                },
+                {
+                    "type":"patch",
+                    "path":"patches/about-1.15.1.patch"
                 }
             ]
         }
