@@ -1,10 +1,10 @@
 {
-    "app-id":"net.sourceforge.liferea",
-    "runtime":"org.gnome.Platform",
-    "runtime-version":"44",
-    "sdk":"org.gnome.Sdk",
-    "command":"liferea",
-    "cleanup":[
+    "app-id": "net.sourceforge.liferea",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "44",
+    "sdk": "org.gnome.Sdk",
+    "command": "liferea",
+    "cleanup": [
         "/include",
         "/lib/pkgconfig",
         "/share/pkgconfig",
@@ -14,7 +14,7 @@
         "*.la",
         "*.a"
     ],
-    "finish-args":[
+    "finish-args": [
         "--device=dri",
         "--filesystem=xdg-download",
         "--share=ipc",
@@ -25,22 +25,21 @@
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.freedesktop.secrets"
     ],
-    "modules":[
+    "modules": [
         "shared-modules/intltool/intltool-0.51.json",
-        /* Remove when Liferea releases a version with webkit2gtk-4.1 */
         "shared-modules/libsoup/libsoup-2.4.json",
         {
-            "name":"libpeas",
-            "buildsystem" : "meson",
-            "cleanup":[
+            "name": "libpeas",
+            "buildsystem": "meson",
+            "cleanup": [
                 "/bin/*",
                 "/lib/peas-demo"
             ],
-            "sources":[
+            "sources": [
                 {
-                    "type":"archive",
-                    "url":"https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz",
-                    "sha256":"297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c",
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz",
+                    "sha256": "297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libpeas"
@@ -48,7 +47,6 @@
                 }
             ]
         },
-
         {
             "name": "git",
             "make-args": [
@@ -62,8 +60,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz",
-                    "sha256": "e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040",
+                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.42.0.tar.xz",
+                    "sha256": "3278210e9fd2994b8484dd7e3ddd9ea8b940ef52170cdb606daa94d887c93b0d",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 5350,
@@ -92,7 +90,6 @@
                 }
             ]
         },
-        /* Remove unifdef, webkit2gtk-4.0 when Liferea releases a version with webkit2gtk-4.1 */
         {
             "name": "unifdef",
             "no-autogen": true,
@@ -106,7 +103,9 @@
                     "sha256": "43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400"
                 }
             ],
-            "cleanup": [ "*" ]
+            "cleanup": [
+                "*"
+            ]
         },
         {
             "name": "webkit2gtk-4.0",
@@ -132,21 +131,21 @@
             ]
         },
         {
-            "name":"liferea",
-            "sources":[
+            "name": "liferea",
+            "sources": [
                 {
-                    "type":"git",
-                    "url":"https://github.com/lwindolf/liferea.git",
+                    "type": "git",
+                    "url": "https://github.com/lwindolf/liferea.git",
                     "tag": "v1.14.6",
-                    "commit":"b394b0f4806f5c47e7a156e2bf40b2d670a7ee21"
+                    "commit": "b394b0f4806f5c47e7a156e2bf40b2d670a7ee21"
                 },
                 {
-                    "type":"patch",
-                    "path":"patches/appdata.patch"
+                    "type": "patch",
+                    "path": "patches/appdata.patch"
                 },
                 {
-                    "type":"patch",
-                    "path":"patches/download.patch"
+                    "type": "patch",
+                    "path": "patches/download.patch"
                 }
             ]
         }
