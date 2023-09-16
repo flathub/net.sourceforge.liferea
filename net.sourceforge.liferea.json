@@ -10,6 +10,9 @@
         "/share/pkgconfig",
         "/share/aclocal",
         "/man",
+        "/share/doc",
+        "/share/gir-1.0",
+        "/share/gitweb",
         "/share/man",
         "*.la",
         "*.a"
