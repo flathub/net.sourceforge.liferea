@@ -10,6 +10,9 @@
         "/share/pkgconfig",
         "/share/aclocal",
         "/man",
+        "/share/doc",
+        "/share/gir-1.0",
+        "/share/gitweb",
         "/share/man",
         "*.la",
         "*.a"
@@ -95,8 +98,8 @@
                 {
                     "type":"git",
                     "url":"https://github.com/lwindolf/liferea.git",
-                    "tag": "v1.15.2",
-                    "commit":"250c63b964a7001982c175a355705c0d166c80f7"
+                    "tag": "v1.15.3",
+                    "commit":"05561d523df315f3266746a3f7daaa363b6ce78e"
                 },
                 {
                     "type":"patch",
