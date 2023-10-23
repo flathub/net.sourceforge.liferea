@@ -30,7 +30,8 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--talk-name=org.freedesktop.Notifications",
-        "--talk-name=org.freedesktop.secrets"
+        "--talk-name=org.freedesktop.secrets",
+        "--talk-name=org.kde.StatusNotifierWatcher"
     ],
     "modules":[
         "shared-modules/intltool/intltool-0.51.json",
