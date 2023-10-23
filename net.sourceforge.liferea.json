@@ -156,6 +156,10 @@
                 {
                     "type": "patch",
                     "path": "patches/download.patch"
+                },
+                {
+                    "type":"patch",
+                    "path":"patches/prgname.patch"
                 }
             ]
         }
