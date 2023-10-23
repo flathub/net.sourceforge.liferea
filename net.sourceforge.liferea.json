@@ -13,7 +13,11 @@
         "/share/doc",
         "/share/gir-1.0",
         "/share/gitweb",
+        "/share/gtk-doc",
         "/share/man",
+        "/share/libayatana-indicator",
+        "/share/libdbusmenu",
+        "/share/vala",
         "*.la",
         "*.a"
     ],
@@ -26,7 +30,8 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--talk-name=org.freedesktop.Notifications",
-        "--talk-name=org.freedesktop.secrets"
+        "--talk-name=org.freedesktop.secrets",
+        "--talk-name=org.kde.StatusNotifierWatcher"
     ],
     "modules":[
         "shared-modules/intltool/intltool-0.51.json",
@@ -44,7 +49,10 @@
                     "sha256":"297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c",
                     "x-checker-data": {
                         "type": "gnome",
-                        "name": "libpeas"
+                        "name": "libpeas",
+                        "versions": {
+                            "<": "1.99"
+                         }
                     }
                 }
             ]
@@ -93,13 +101,80 @@
             ]
         },
         {
+            "name": "libdbusmenu-gtk3",
+            "buildsystem": "autotools",
+            "build-options": {
+                "cflags": "-Wno-error"
+            },
+            "config-opts": [
+                "--with-gtk=3",
+                "--disable-dumper",
+                "--disable-static",
+                "--disable-gtk-doc",
+                "--enable-introspection=no",
+                "--disable-vala"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz",
+                    "sha256": "b9cc4a2acd74509435892823607d966d424bd9ad5d0b00938f27240a1bfa878a"
+                }
+            ]
+        },
+        {
+            "name": "ayatana-ido",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/AyatanaIndicators/ayatana-ido.git",
+                    "tag": "0.10.1",
+                    "commit": "13402a2cc4616b4b5f4244413599e635fcfc1401"
+                }
+            ]
+        },
+        {
+            "name": "libayatana-indicator",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/AyatanaIndicators/libayatana-indicator.git",
+                    "tag": "0.9.4",
+                    "commit": "611bb384b73fa6311777ba4c41381a06f5b99dad"
+                }
+            ]
+        },
+        {
+            "name": "libayatana-appindicator",
+            "buildsystem": "cmake-ninja",
+            "build-options": {
+                "env": {
+                    "LIBRARY_PATH": "/app/lib:$LIBRARY_PATH"
+                }
+            },
+            "config-opts": [
+                "-DENABLE_BINDINGS_MONO=NO",
+                "-DENABLE_BINDINGS_VALA=NO"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/AyatanaIndicators/libayatana-appindicator.git",
+                    "tag": "0.5.93",
+                    "commit": "238c8b02718fa5b4af95ede72beeed762094f4cc"
+                }
+            ]
+        },
+        {
             "name":"liferea",
             "sources":[
                 {
                     "type":"git",
                     "url":"https://github.com/lwindolf/liferea.git",
-                    "tag": "v1.15.3",
-                    "commit":"05561d523df315f3266746a3f7daaa363b6ce78e"
+                    "tag": "v1.15.4",
+                    "commit":"508e7a970088873f6503b8c8df08dac6ae14963c"
                 },
                 {
                     "type":"patch",
@@ -108,6 +183,18 @@
                 {
                     "type":"patch",
                     "path":"patches/download.patch"
+                },
+                {
+                    "type":"patch",
+                    "path":"patches/trayicon-config-path.patch"
+                },
+                {
+                    "type":"patch",
+                    "path":"patches/trayicon.patch"
+                },
+                {
+                    "type":"patch",
+                    "path":"patches/prgname.patch"
                 }
             ]
         }

@@ -1,0 +1,41 @@
+From 82e81a5f51199e0aa47d9f2b055e35d3e674e29c Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Mon, 23 Oct 2023 14:16:57 +0530
+Subject: [PATCH] Set prgname to match the reverse dns style application id
+
+When launched on wayland with `WAYLAND_DEBUG=1` Liferea sets the app id
+"liferea" but not net.sourceforge.liferea:
+
+```
+[1225601.077]  -> xdg_toplevel@41.set_app_id("liferea")
+```
+
+When launched on KDE Wayland session, it expects the desktop file name
+to match the application id to look up the correct app icon to show in
+taskbar app swicther etc. But instead it tries too look up an icon
+called "liferea" which does not exist. So liferea shows up with the
+default wayland icon instead of the app icon.
+
+Setting WM_CLASS here won't work and we can't export two desktop files.
+
+This does not effect GNOME because it tries harder to guess the app icon
+---
+ src/liferea_application.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/liferea_application.c b/src/liferea_application.c
+index f099beef..11ea2468 100644
+--- a/src/liferea_application.c
++++ b/src/liferea_application.c
+@@ -337,7 +337,7 @@ liferea_application_new (int argc, char *argv[])
+ 		                    "application-id", "net.sourceforge.liferea",
+ 		                    NULL);
+ 
+-	g_set_prgname ("liferea");
++	g_set_prgname ("net.sourceforge.liferea");
+ 	g_set_application_name (_("Liferea"));
+ 	gtk_window_set_default_icon_name ("net.sourceforge.liferea");	/* GTK theme support */
+ 	status = g_application_run (G_APPLICATION (liferea_app), argc, argv);
+-- 
+2.41.0
+
