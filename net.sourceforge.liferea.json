@@ -13,7 +13,11 @@
         "/share/doc",
         "/share/gir-1.0",
         "/share/gitweb",
+        "/share/gtk-doc",
         "/share/man",
+        "/share/libayatana-indicator",
+        "/share/libdbusmenu",
+        "/share/vala",
         "*.la",
         "*.a"
     ],
