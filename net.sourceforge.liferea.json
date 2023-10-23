@@ -187,6 +187,10 @@
                 {
                     "type":"patch",
                     "path":"patches/trayicon-config-path.patch"
+                },
+                {
+                    "type":"patch",
+                    "path":"patches/trayicon.patch"
                 }
             ]
         }
