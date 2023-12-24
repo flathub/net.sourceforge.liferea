@@ -173,8 +173,8 @@
                 {
                     "type":"git",
                     "url":"https://github.com/lwindolf/liferea.git",
-                    "tag": "v1.15.4",
-                    "commit":"508e7a970088873f6503b8c8df08dac6ae14963c"
+                    "tag": "v1.15.5",
+                    "commit":"b8c934f3a627ef35060e5e6d342275ee72fdfc2c"
                 },
                 {
                     "type":"patch",
@@ -186,15 +186,7 @@
                 },
                 {
                     "type":"patch",
-                    "path":"patches/trayicon-config-path.patch"
-                },
-                {
-                    "type":"patch",
                     "path":"patches/trayicon.patch"
-                },
-                {
-                    "type":"patch",
-                    "path":"patches/prgname.patch"
                 }
             ]
         }
