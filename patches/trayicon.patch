@@ -1,6 +1,8 @@
---- liferea/plugins/trayicon.py	2023-10-23 12:16:38.771381887 +0530
-+++ liferea/plugins/trayicon.py	2023-10-23 12:13:13.126260219 +0530
-@@ -157,20 +159,20 @@
+diff --git a/plugins/trayicon.py b/plugins/trayicon.py
+index b938e4a9..49e37204 100644
+--- a/plugins/trayicon.py
++++ b/plugins/trayicon.py
+@@ -159,20 +159,20 @@ class TrayiconPlugin (GObject.Object, Liferea.ShellActivatable):
          if self.use_appindicator:
              self.indicator = AppIndicator.Indicator.new(
                  "Liferea",
@@ -25,20 +27,3 @@
  
              self.staticon = Gtk.StatusIcon ()
              self.staticon.connect("activate", self.trayicon_click)
-@@ -314,7 +316,7 @@
-                 # Workaround Mate bug
-                 # See also: https://github.com/mate-desktop/mate-panel/issues/1412
-                 self.indicator.set_icon_full(
--                    Liferea.icon_find_pixmap_file("unread.png"),
-+                    "net.sourceforge.liferea",
-                     _("Liferea unread icon")
-                 )
- 
-@@ -324,7 +326,7 @@
-                 # Workaround Mate bug
-                 # See also: https://github.com/mate-desktop/mate-panel/issues/1412
-                 self.indicator.set_icon_full(
--                    Liferea.icon_find_pixmap_file("emblem-web.svg"),
-+                    "net.sourceforge.liferea",
-                     _("Liferea")
-                 )
