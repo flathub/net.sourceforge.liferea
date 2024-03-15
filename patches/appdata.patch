@@ -1,26 +1,25 @@
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index 83f1a543..eb752cda 100644
+index 6c863d74..a8229553 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
-@@ -75,6 +75,21 @@
-   <translation type="gettext">liferea</translation>
-   <content_rating type="oars-1.1"/>
+@@ -81,6 +81,19 @@
+     <color type="primary" scheme_preference="dark">#64647D</color>
+   </branding>
    <releases>
-+    <release date="2023-12-24" version="1.15.5">
++    <release date="2024-03-15" version="1.15.6">
 +      <description>
-+        <p>This release brings small improvements to the trayicon plugin and content filtering 
-+        using DOMPurify which should increase security against XSS attacks via feeds providing 
-+        rich HTML content.</p>
++        <p>This is a small bugfix release with several translation updates and optimizations for better handling HTML content.</p>
 +        <p>Changes:</p>
 +        <ul>
-+          <li>Remove Mate workaround from trayicon plugin (Yuri Konotopov)</li>
-+          <li>Set prgname to match application id (needed for KDE) (bbhtt)</li>
-+          <li>Support XDG_CONFIG_HOME for trayicon plugoin config (bbhtt)</li>
-+          <li>Update Readability.js to recent version (Lars Windolf)</li>
-+          <li>Added DOMPurify.js for content filtering (Lars Windolf)</li>
++          <li>Automatically drop empty content elements (e.g. placeholders for images/iframes/ads not loaded)</li>
++          <li>Automatically set inline SVG sizes from viewBox attribute to prevent max-width SVGs</li>
++          <li>Hide <code> nav </code> elements extracted by HTML5 content extraction</li>
++          <li>Remove G_REGEX_OPTIMIZE flag from DHTML stripping regex handling as valgrind reports memory errors with this.</li>
++          <li>src/node_type.h: add #include <code>libxml/tree.h</code> for xmlNodePtr type (@trofi)</li>
 +        </ul>
 +      </description>
 +    </release>
-     <release date="2023-10-23" version="1.15.4">
+     <release date="2023-12-24" version="1.15.5">
        <description>
-         <p>This release brings small fixes and a rework of the trayicon plugin</p>
+         <p>This release brings small improvements to the trayicon plugin and content filtering 
+
