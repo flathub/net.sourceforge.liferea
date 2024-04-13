@@ -1,0 +1,66 @@
+From 614b2bb45208d8e14d5d9f9a344fe75f13993f39 Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Sat, 13 Apr 2024 19:55:57 +0530
+Subject: [PATCH] appdata: Update screenshot captions and remove dead link
+
+See https://github.com/lwindolf/liferea/issues/1341
+---
+ net.sourceforge.liferea.appdata.xml.in | 24 ++++++++++--------------
+ 1 file changed, 10 insertions(+), 14 deletions(-)
+
+diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
+index 989d3fe37..281456853 100644
+--- a/net.sourceforge.liferea.appdata.xml.in
++++ b/net.sourceforge.liferea.appdata.xml.in
+@@ -32,41 +32,37 @@
+   </description>
+   <screenshots>
+     <screenshot type="default">
+-      <caption>Reading newsfeeds in an email client interface</caption>
++      <caption>Read feeds in an email like interface</caption>
+       <image>https://lzone.de/liferea/screenshots/screenshot1.png</image>
+     </screenshot>
+     <screenshot>
+-      <caption>Hide read feeds from the subscription list</caption>
++      <caption>Integrated browser support</caption>
+       <image>https://lzone.de/liferea/screenshots/screenshot2.png</image>
+     </screenshot>
+     <screenshot>
+-      <caption>Three pane view mode for wide screens</caption>
++      <caption>Read your favourite comics</caption>
+       <image>https://lzone.de/liferea/screenshots/screenshot3.png</image>
+     </screenshot>
+     <screenshot>
+-      <caption>Play SoundCloud music in Liferea</caption>
++      <caption>Play and download podcasts</caption>
+       <image>https://lzone.de/liferea/screenshots/screenshot4.png</image>
+     </screenshot>
+     <screenshot>
+-      <caption>Play music enclosures with the internal player</caption>
+-      <image>https://lzone.de/liferea/screenshots/screenshot5.png</image>
++      <caption>Install plugins from the community</caption>
++      <image>https://lzone.de/liferea/screenshots/screenshot6.png</image>
+     </screenshot>
+     <screenshot>
+-      <caption>Read your favourite comics!</caption>
+-      <image>https://lzone.de/liferea/screenshots/screenshot6.png</image>
++      <caption>Preferences window</caption>
++      <image>https://lzone.de/liferea/screenshots/screenshot9.png</image>
+     </screenshot>
+     <screenshot>
+-      <caption>Customize Liferea in the preferences dialog</caption>
++      <caption>Privacy settings to prevent tracking</caption>
+       <image>https://lzone.de/liferea/screenshots/screenshot7.png</image>
+     </screenshot>
+     <screenshot>
+-      <caption>Easily subscribe to new feeds</caption>
++      <caption>Add various feed sources</caption>
+       <image>https://lzone.de/liferea/screenshots/screenshot8.png</image>
+     </screenshot>
+-    <screenshot>
+-      <caption>Browse the web with tabs inside Liferea</caption>
+-      <image>https://lzone.de/liferea/screenshots/screenshot9.png</image>
+-    </screenshot>
+   </screenshots>
+   <url type="bugtracker">https://github.com/lwindolf/liferea/issues/new</url>
+   <url type="homepage">https://lzone.de/liferea/</url>
