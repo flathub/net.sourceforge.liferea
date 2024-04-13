@@ -156,7 +156,8 @@
                     "paths": [
                         "patches/appdata.patch",
                         "patches/download.patch",
-                        "patches/prgname.patch"
+                        "patches/prgname.patch",
+                        "patches/appdata-screenshot.patch"
                     ]
                 }
             ]
