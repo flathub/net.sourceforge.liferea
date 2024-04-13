@@ -187,6 +187,10 @@
                 {
                     "type":"patch",
                     "path":"patches/trayicon.patch"
+                },
+                {
+                    "type":"patch",
+                    "path":"patches/appdata-screenshot.patch"
                 }
             ]
         }
