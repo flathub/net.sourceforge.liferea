@@ -70,8 +70,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.44.0.tar.xz",
-                    "sha256": "e358738dcb5b5ea340ce900a0015c03ae86e804e7ff64e47aa4631ddee681de3",
+                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.45.1.tar.xz",
+                    "sha256": "e64d340a8e627ae22cfb8bcc651cca0b497cf1e9fdf523735544ff4a732f12bf",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 5350,
