@@ -131,8 +131,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://webkitgtk.org/releases/webkitgtk-2.46.0.tar.xz",
-                    "sha256": "d4d433040f190151560c50bde840850089f87bad4fefa9ebdb4aae856a3df43a",
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.46.1.tar.xz",
+                    "sha256": "2a14faac359aff941d0bc4443eb5537e3702bcaf316b0a129e0e65f3ff8eaac0",
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://webkitgtk.org/releases/",
