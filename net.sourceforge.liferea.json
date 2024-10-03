@@ -156,7 +156,8 @@
                         "patches/appdata.patch",
                         "patches/download.patch",
                         "patches/prgname.patch",
-                        "patches/appdata-screenshot.patch"
+                        "patches/appdata-screenshot.patch",
+                        "patches/libxml.patch"
                     ]
                 }
             ]
