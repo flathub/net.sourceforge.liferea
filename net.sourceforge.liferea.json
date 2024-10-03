@@ -106,8 +106,8 @@
                 {
                     "type":"git",
                     "url":"https://github.com/lwindolf/liferea.git",
-                    "tag": "v1.15.7",
-                    "commit":"9b3b7e463739e1a261e65ae45adee6c49c5a9939"
+                    "tag": "v1.15.8",
+                    "commit":"0add538689c43cbff09e7263eaf2ff62e569c75f"
                 },
                 {
                     "type":"patch",
