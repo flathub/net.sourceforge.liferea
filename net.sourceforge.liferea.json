@@ -25,7 +25,6 @@
         "--socket=pulseaudio",
         "--socket=fallback-x11",
         "--socket=wayland",
-        "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.freedesktop.secrets"
     ],
     "modules": [
