@@ -3,7 +3,7 @@
     "runtime":"org.gnome.Platform",
     "runtime-version":"47",
     "sdk":"org.gnome.Sdk",
-    "command":"liferea",
+    "command":"liferea.sh",
     "cleanup":[
         "/include",
         "/lib/pkgconfig",
@@ -84,6 +84,10 @@
         "python3-requests.json",
         {
             "name":"liferea",
+            "post-install": [
+                "install -Dm0755 liferea.sh ${FLATPAK_DEST}/bin/liferea.sh",
+                "desktop-file-edit --set-key=\"Exec\" --set-value=\"liferea.sh %U\" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+            ],
             "sources":[
                 {
                     "type":"git",
@@ -98,6 +102,10 @@
                 {
                     "type":"patch",
                     "path":"patches/trayicon.patch"
+                },
+                {
+                    "type": "file",
+                    "path": "liferea.sh"
                 }
             ]
         }
