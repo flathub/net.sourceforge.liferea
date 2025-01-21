@@ -81,41 +81,19 @@
                 }
             ]
         },
-        {
-            "name": "aria2",
-            "config-opts": [
-                "--enable-libaria2",
-                "--with-ca-bundle=/etc/ssl/certs/ca-certificates.crt"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "sha256": "60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b",
-                    "url": "https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 109,
-                        "url-template": "https://github.com/aria2/aria2/releases/download/release-$version/aria2-$version.tar.xz"
-                    }
-                }
-            ]
-        },
+        "python3-requests.json",
         {
             "name":"liferea",
             "sources":[
                 {
                     "type":"git",
                     "url":"https://github.com/lwindolf/liferea.git",
-                    "tag": "v1.15.8",
-                    "commit":"0add538689c43cbff09e7263eaf2ff62e569c75f"
+                    "tag": "v1.15.9",
+                    "commit":"4be3c6a8da3efadd6bc771e58b8c92eb662f5e11"
                 },
                 {
                     "type":"patch",
                     "path":"patches/appdata.patch"
-                },
-                {
-                    "type":"patch",
-                    "path":"patches/download.patch"
                 },
                 {
                     "type":"patch",
