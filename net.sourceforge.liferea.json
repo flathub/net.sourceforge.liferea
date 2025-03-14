@@ -125,7 +125,8 @@
                 "-DUSE_SOUP2=ON",
                 "-DENABLE_MINIBROWSER=OFF",
                 "-DENABLE_WEBDRIVER=OFF",
-                "-DENABLE_GAMEPAD=OFF"
+                "-DENABLE_GAMEPAD=OFF",
+                "-DENABLE_SPEECH_SYNTHESIS=OFF"
             ],
             "sources": [
                 {
