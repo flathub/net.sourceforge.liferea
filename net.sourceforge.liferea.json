@@ -132,13 +132,7 @@
                 {
                     "type": "archive",
                     "url": "https://webkitgtk.org/releases/webkitgtk-2.48.1.tar.xz",
-                    "sha256": "98efdf21c4cdca0fe0b73ab5a8cb52093b5aa52d9b1b016a93f71dbfa1eb258f",
-                    "x-checker-data": {
-                        "type": "html",
-                        "url": "https://webkitgtk.org/releases/",
-                        "version-pattern": "LATEST-STABLE-(\\d[\\.\\d]+\\d)",
-                        "url-template": "https://webkitgtk.org/releases/webkitgtk-$version.tar.xz"
-                    }
+                    "sha256": "98efdf21c4cdca0fe0b73ab5a8cb52093b5aa52d9b1b016a93f71dbfa1eb258f"
                 }
             ]
         },
