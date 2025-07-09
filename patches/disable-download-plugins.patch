@@ -1,0 +1,21 @@
+diff --git a/plugins/plugin-installer.py b/plugins/plugin-installer.py
+index af28001e..dfa7315f 100644
+--- a/plugins/plugin-installer.py
++++ b/plugins/plugin-installer.py
+@@ -160,15 +160,7 @@ class PluginBrowser(Gtk.Window):
+ 
+     def fetch_list(self):
+         """Fetch list from github project repo and parse JSON"""
+-
+-        if True == Liferea.NetworkMonitor.is_online():
+-            list_url = "https://raw.githubusercontent.com/lwindolf/liferea/master/plugins/plugin-list.json"
+-            data = None
+-            req = urllib.request.Request(list_url)
+-            resp = urllib.request.urlopen(req).read()
+-            return json.loads(resp.decode('utf-8'))
+-        else:
+-            return {'plugins': []}
++        return {'plugins': []}
+ 
+     def category_filter_func(self, model, iter, data):
+         """Tests if the category in the row is the one in the filter"""

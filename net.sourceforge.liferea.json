@@ -112,11 +112,11 @@
                 },
                 {
                     "type": "patch",
-                    "path": "patches/appdata.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/trayicon.patch"
+                    "paths": [
+                        "patches/appdata.patch",
+                        "patches/trayicon.patch",
+                        "patches/disable-download-plugins.patch"
+                    ]
                 },
                 {
                     "type": "file",
