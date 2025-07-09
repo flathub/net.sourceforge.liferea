@@ -1,0 +1,29 @@
+diff --git a/plugins/trayicon.py b/plugins/trayicon.py
+index b938e4a9..49e37204 100644
+--- a/plugins/trayicon.py
++++ b/plugins/trayicon.py
+@@ -159,20 +159,20 @@ class TrayiconPlugin (GObject.Object, Liferea.ShellActivatable):
+         if self.use_appindicator:
+             self.indicator = AppIndicator.Indicator.new(
+                 "Liferea",
+-                Liferea.icon_find_pixmap_file("emblem-web.svg"),
++                "net.sourceforge.liferea",
+                 AppIndicator.IndicatorCategory.APPLICATION_STATUS
+             )
+ 
+             self.indicator.set_attention_icon_full(
+-                Liferea.icon_find_pixmap_file("unread.png"),
++                "net.sourceforge.liferea",
+                 _("Liferea unread icon")
+             )
+             self.indicator.set_status(AppIndicator.IndicatorStatus.ACTIVE)
+             self.indicator.set_title("Liferea")
+         else:
+-            self.read_pix = Liferea.icon_create_from_file("emblem-web.svg")
++            self.read_pix = "net.sourceforge.liferea"
+             # FIXME: Support a scalable image!
+-            self.unread_pix = Liferea.icon_create_from_file("unread.png")
++            self.unread_pix = "net.sourceforge.liferea"
+ 
+             self.staticon = Gtk.StatusIcon ()
+             self.staticon.connect("activate", self.trayicon_click)
