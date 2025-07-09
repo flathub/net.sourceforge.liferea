@@ -1,15 +1,16 @@
 {
-    "app-id":"net.sourceforge.liferea",
-    "runtime":"org.gnome.Platform",
-    "runtime-version":"47",
-    "sdk":"org.gnome.Sdk",
-    "command":"liferea.sh",
-    "cleanup":[
+    "app-id": "net.sourceforge.liferea",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "48",
+    "sdk": "org.gnome.Sdk",
+    "command": "liferea.sh",
+    "cleanup": [
         "/include",
         "/lib/pkgconfig",
         "/share/pkgconfig",
         "/share/aclocal",
         "/man",
+        "/share/bash-completion",
         "/share/doc",
         "/share/gir-1.0",
         "/share/gitweb",
@@ -21,7 +22,7 @@
         "*.la",
         "*.a"
     ],
-    "finish-args":[
+    "finish-args": [
         "--device=dri",
         "--filesystem=xdg-download",
         "--share=ipc",
@@ -32,27 +33,41 @@
         "--talk-name=org.freedesktop.secrets",
         "--talk-name=org.kde.StatusNotifierWatcher"
     ],
-    "modules":[
+    "modules": [
+        {
+            "name": "pygobject",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dtests=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/pygobject/3.50/pygobject-3.50.0.tar.xz",
+                    "sha256": "8d836e75b5a881d457ee1622cae4a32bcdba28a0ba562193adb3bbb472472212"
+                }
+            ]
+        },
         "shared-modules/intltool/intltool-0.51.json",
         "shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json",
         {
-            "name":"libpeas",
-            "buildsystem" : "meson",
-            "cleanup":[
+            "name": "libpeas",
+            "buildsystem": "meson",
+            "cleanup": [
                 "/bin/*",
                 "/lib/peas-demo"
             ],
-            "sources":[
+            "sources": [
                 {
-                    "type":"archive",
-                    "url":"https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz",
-                    "sha256":"297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c",
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz",
+                    "sha256": "297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libpeas",
                         "versions": {
                             "<": "1.99"
-                         }
+                        }
                     }
                 }
             ]
@@ -70,8 +85,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.48.1.tar.xz",
-                    "sha256": "1c5d545f5dc1eb51e95d2c50d98fdf88b1a36ba1fa30e9ae5d5385c6024f82ad",
+                    "url": "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.50.1.tar.xz",
+                    "sha256": "7e3e6c36decbd8f1eedd14d42db6674be03671c2204864befa2a41756c5c8fc4",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 5350,
@@ -83,25 +98,25 @@
         },
         "python3-requests.json",
         {
-            "name":"liferea",
+            "name": "liferea",
             "post-install": [
                 "install -Dm0755 liferea.sh ${FLATPAK_DEST}/bin/liferea.sh",
                 "desktop-file-edit --set-key=\"Exec\" --set-value=\"liferea.sh %U\" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
             ],
-            "sources":[
+            "sources": [
                 {
-                    "type":"git",
-                    "url":"https://github.com/lwindolf/liferea.git",
+                    "type": "git",
+                    "url": "https://github.com/lwindolf/liferea.git",
                     "tag": "v1.15.9",
-                    "commit":"4be3c6a8da3efadd6bc771e58b8c92eb662f5e11"
+                    "commit": "4be3c6a8da3efadd6bc771e58b8c92eb662f5e11"
                 },
                 {
-                    "type":"patch",
-                    "path":"patches/appdata.patch"
-                },
-                {
-                    "type":"patch",
-                    "path":"patches/trayicon.patch"
+                    "type": "patch",
+                    "paths": [
+                        "patches/appdata.patch",
+                        "patches/trayicon.patch",
+                        "patches/disable-download-plugins.patch"
+                    ]
                 },
                 {
                     "type": "file",
