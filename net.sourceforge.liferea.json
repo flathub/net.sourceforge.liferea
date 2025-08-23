@@ -57,16 +57,20 @@
                 "/bin/*",
                 "/lib/peas-demo"
             ],
+			"config-opts": [
+				"-Dlua51=false",
+				"-Dintrospection=false"
+			],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz",
-                    "sha256": "297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c",
+                    "url": "https://download.gnome.org/sources/libpeas/2.1/libpeas-2.1.0.tar.xz",
+                    "sha256": "0dc581f4fe29754fb114adc6f46a0423200c111e08c1e5ad08719e55c418de97",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libpeas",
                         "versions": {
-                            "<": "1.99"
+                            ">": "2.00"
                         }
                     }
                 }
@@ -107,15 +111,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/lwindolf/liferea.git",
-                    "tag": "v1.15.9",
-                    "commit": "4be3c6a8da3efadd6bc771e58b8c92eb662f5e11"
+                    "tag": "v1.16.1",
+                    "commit": "6fba37057d7ca0f40251b4ea02279c5d99296e40"
                 },
                 {
                     "type": "patch",
                     "paths": [
-                        "patches/appdata.patch",
-                        "patches/trayicon.patch",
-                        "patches/disable-download-plugins.patch"
+                        "patches/trayicon.patch"
                     ]
                 },
                 {
