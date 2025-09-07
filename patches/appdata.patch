@@ -1,5 +1,5 @@
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index 7c34c967..672f9024 100644
+index 7c34c967..c8bb684a 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
 @@ -67,7 +67,7 @@
@@ -11,72 +11,64 @@ index 7c34c967..672f9024 100644
    <url type="help">https://lzone.de/liferea/help1140/topics_en.html</url>
    <url type="translate">https://github.com/lwindolf/liferea?tab=readme-ov-file#new-translations</url>
    <translation type="gettext">liferea</translation>
-@@ -77,6 +77,61 @@
+@@ -77,357 +77,41 @@
      <color type="primary" scheme_preference="dark">#64647D</color>
    </branding>
    <releases>
-+    <release date="2025-08-28" version="1.16.2">
-+      <description>
-+        <p>This is a bugfix release for 1.16. It also introduces smaller improvements
-+        like a standard GTK shortcuts dialog accessible with the Ctrl-? hotkey, F1 now
-+        points to the help pages.</p>
-+        <p>Changes:</p>
-+        <ul>
-+          <li>Fix #1421 "Mark all as read ?" warning dialog does not appear on middle-click</li>
-+          <li>Fixes #904: charset related issue with links</li>
-+          <li>Fixes crash when subscribing with "Discover feeds"</li>
-+          <li>URL bar is now hidden for special help tabs</li>
-+          <li>Removes outdated FAQ menu entry</li>
-+          <li>GtkShortCutsWindow is now used for displaying hotkeys, new hotkey is Ctrl-?</li>
-+          <li>Fixes incorrectly emitting "move-cursor" signal in GtkTreeView</li>
-+        </ul>
-+      </description>
-+    </release>
-+    <release date="2025-08-20" version="1.16.1">
-+      <description>
-+        <p>Changes:</p>
-+        <ul>
-+          <li>Fix #1442: Fails to start on empty database</li>
-+        </ul>
-+      </description>
-+    </release>
-+    <release date="2025-08-18" version="1.16.0">
-+      <description>
-+        <p>This is the first stable 1.16 release</p>
-+        <p>Changes:</p>
-+        <ul>
-+          <li>Update to libsoup3</li>
-+          <li>New HTTP 429 handling to avoid overloading webservers</li>
-+          <li>Sending Accept-Language HTTP Header</li>
-+          <li>Support for sending Sec-GPC HTTP header</li>
-+          <li>Redesign of the content view</li>
-+          <li>Audio and video enclosures are now embedded as HTML elements</li>
-+          <li>Now DOMPurify.js is used to filter displayed content</li>
-+          <li>Update to libwebkit2gtk-4.1</li>
-+          <li>Automatic removing of empty content elements (images/iframes/ads placeholders)</li>
-+          <li>Properly sizing SVGs to avoid forcing the to max-width</li>
-+          <li>Content view now uses a CSP to limit external ressources that are allowed for loading</li>
-+          <li>Migration from libpeas1 to libpeas2</li>
-+          <li>Simplified plugin manager plugin</li>
-+          <li>When upgrading to 1.16.0 a DB schema migration is performed which depending on  the number of your feeds and the item cache setting might take a while.</li>
-+        </ul>
-+        <p>Deprecations:</p>
-+        <ul>
-+          <li>Manual proxy setting was removed</li>
-+          <li>Theme color support had to be dropped (no support in GTK4 anymore)</li>
-+          <li>"pane" plugin was removed</li>
-+          <li>"webkit inspector" plugin was removed (functionality is now builtin using --debug-html flag)</li>
-+          <li>Installing additional plugins from Github was removed</li>
-+        </ul>
-+      </description>
-+    </release>
-     <release date="2025-01-25" version="1.15.9">
+-    <release date="2025-01-25" version="1.15.9">
++    <release date="2025-09-05" version="1.16.3">
        <description>
-         <p>Today sees a new release of Liferea with fixes, translation updates and some major changes.</p>
-@@ -130,304 +185,5 @@
-       </ul>
-       </description>
-     </release>
+-        <p>Today sees a new release of Liferea with fixes, translation updates and some major changes.</p>
+-        <p><em>Integrated Download Manager</em></p>
+-        <p>Starting with Liferea 1.15.9 there is a simple integrated download manager. The idea is to
+-        be roughly on-par with the features modern browsers support. While the download manager
+-        is basic it should improve user experience a lot.Up until now we had a hard-coded list of
+-        typical download managers. This had several disadvantages. Now Liferea has a very simple
+-        download manager implemented using simple single thread Python network fetching. Hopefully
+-        this will increase usability and download workflows.</p>
+-        <p><em>Rendering Changes</em></p>
+-        <p>This release fixes the dark theme switching regression in the item view. The dark mode item view
+-        feature was lost some releases ago because of GTK4 deprecations. Since GTK4 there is no more
+-        GTK supported way to determine theme colors.
+-
+-        To still do dark mode switching Liferea follows (Devhelp and other tools using WebkitGTK) which
+-        switch light/dark mode purely with CSS and static theme-independant colors.
+-
+-        Sadly this will mean a visible color mismatch to the GTK theme. This is mostly appearant in
+-        dark mode. Also the link color is set to blueish and can't follow the GTK theme color for links anymore.
+-
+-        Many other applications are also suffering from this. Sorry there is just no way to do it anymore.
+-        If you really hate the default CSS style please consider changing them using custom CSS.</p>
+-        <p><em>Item View Layout Redesign</em></p>
+-        <p>Along with the theme adaptions come a redesign of the item view. To be honest the look and feel
+-        is heavily inspired by Jan Lukas Gernert's NewsFlashGTK which I consider very well done. It is a very
+-        calm theme reducing distraction and a good balance for reading longer and shorter texts.</p>
+-        <p><em>Reader Mode Removed</em></p>
+-        <p>The user facing options to enable/disable "Reader Mode" in the preferences and the item view pane
+-        content menu are now gone. The code paths were too complicated and the results and fallback in case
+-        of errors was very unsatisfactory.
+-
+-        Still the use of "Readability.js" the library behind "Reader Mode" is still active. It is now automatically
+-        applied when the HTML scraping is used. No user interaction needed.</p>
+-        <p><em>Changes:</em></p>
+-        <ul>
+-          <li>#1391: GObject refactoring nodePtr -> Node, updateJobPtr -> UpdateJob to allow plugins modifying the feed list. (Lars Windolf)</li>
+-          <li>Fixes #1387: Dark theme lost in preview window (Lars Windolf)</li>
+-          <li>Fixes HTTP redirects not working (Lars Windolf)</li>
+-          <li>Fixes memory leaks in network callbacks (Lars Windolf)</li>
+-          <li>Fixes unnecessary LifereaBrowser clearing on layout change (Lars Windolf)</li>
+-          <li>New unit tests for update handling code (Lars Windolf)</li>
+-          <li>#1388 Implemented download manager plugin, all preferences for external tools were dropped (Lars Windolf)</li>
+-          <li>Refactoring of plugin management, code reorganized. Disabling plugins now does not disable base plugins (needed for auth and node sources) as this would prevent startup (Lars Windolf)</li>
+-          <li>Refactoring of content scraping, processing now happens in Javascript on entire source documents. We now store a bit more data, but get better extraction results (Lars Windolf)</li>
+-          <li>Support for lazy loading &lt;img data-src=""&gt; definitions. This unbreaks images when scraping some websites (Lars Windolf)</li>
+-          <li>Redesign of the HTML view. Look and feel is adapted from Newsflash. There is now a max-width and less cluttered reading. (Lars Windolf)</li>
+-          <li>Getting rid of XSLT in favor of using Handlebars.js (Lars Windolf)</li>
+-          <li>Updated Czech translation (Amereyeu)</li>
+-          <li>Updated Albanian translation (Besnik Bleta)</li>
+-      </ul>
+-      </description>
+-    </release>
 -    <release date="2024-09-26" version="1.15.8">
 -      <description>
 -        <p>Changes:</p>
@@ -168,8 +160,16 @@ index 7c34c967..672f9024 100644
 -    <release date="2023-08-30" version="1.15.2">
 -      <description>
 -        <p>This is a bugfix release. It provides an important stability fix regarding feed parsing. Kudos to Rich Coe for debugging and fixing the issue!</p>
--        <p>Changes:</p>
--        <ul>
++        <p>This release brings smaller improvements for the 1.16 release line</p>
++        <p>Pane position should now be properly restored after restart. Before the did change to arbitrary versions
++        due to some race condition in the Liferea GUI setup sequence.</p>
++        <p>There is a new "Print" action under "Tools" which allows printing the currently active browser/headline view.</p>
++        <p>Next there is a change to "Advanced" subscribing. In the past the "Advanced" button
++        did allow you to specify filters and special feed sources. Now the "Advanced" button
++        launches the complete feed properties dialog. This way you can configure all options
++        before subscribing to the feed.</p>
+         <p>Changes:</p>
+         <ul>
 -          <li>Fixes #1291: Feed parsing is broken (Rich Coe)</li>
 -        </ul>
 -      </description>
@@ -318,11 +318,16 @@ index 7c34c967..672f9024 100644
 -          <li>Dropped Atom 0.2/0.3 (aka Pie) support</li>
 -          <li>Dropped blogChannel namespace support</li>
 -          <li>Dropped photo namespace support</li>
--        </ul>
--      </description>
--    </release>
++          <li>Rewrite GtkPaned position restoration to GSettings bindings</li>
++          <li>Add print support, new menu option in 'Tools'</li>
++          <li>Show full feed properties dialog on 'Advanced' subscribe</li>
++          <li>Automatically determine girepository version to use</li>
+         </ul>
+       </description>
+     </release>
 -    <release date="2022-07-26" version="1.13.9">
--      <description>
++    <release date="2025-08-28" version="1.16.2">
+       <description>
 -        <p>This will be the last unstable release before the first 1.14 release candidate. It contains
 -         bugfixes and a generalization of the Google Reader API implementation we already had
 -         for TheOldReader. This implementation was improved, fixing some bugs and can now
@@ -348,8 +353,11 @@ index 7c34c967..672f9024 100644
 -           Please give feedback how you like the change, especially the rather small padding left of the
 -           favicon column (when in wide mode)!
 -        </p>
--        <p>Changes:</p>
--        <ul>
++        <p>This is a bugfix release for 1.16. It also introduces smaller improvements
++        like a standard GTK shortcuts dialog accessible with the Ctrl-? hotkey, F1 now
++        points to the help pages.</p>
+         <p>Changes:</p>
+         <ul>
 -          <li>Update to Readability.js 0.41 (better image and table handling) (Lars Windolf)</li>
 -          <li>Changes to UserAgent handling: same UA is now used for both feed fetching
 -                and internal browsing. User agent now indicates Android+Mobile per default
@@ -366,9 +374,16 @@ index 7c34c967..672f9024 100644
 -          <li>Fixes #1111: wrong base URI in reader mode (Lars Windolf)</li>
 -          <li>Fixes #1112: Image duplication caused by feeds providing an image link which is also in the item description as additional metadata. (Lars Windolf)</li>
 -          <li>Update of Dutch translation (Gert-dev)</li>
--        </ul>
--      </description>
--    </release>
++          <li>Fix #1421 "Mark all as read ?" warning dialog does not appear on middle-click</li>
++          <li>Fixes #904: charset related issue with links</li>
++          <li>Fixes crash when subscribing with "Discover feeds"</li>
++          <li>URL bar is now hidden for special help tabs</li>
++          <li>Removes outdated FAQ menu entry</li>
++          <li>GtkShortCutsWindow is now used for displaying hotkeys, new hotkey is Ctrl-?</li>
++          <li>Fixes incorrectly emitting "move-cursor" signal in GtkTreeView</li>
+         </ul>
+       </description>
+     </release>
 -    <release date="2022-04-05" version="1.13.8"/>
 -    <release date="2021-12-07" version="1.13.7"/>
 -    <release date="2021-05-07" version="1.13.6"/>
