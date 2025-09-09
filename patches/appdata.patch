@@ -1,5 +1,5 @@
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index 7c34c967..c8bb684a 100644
+index 7c34c967..e31db416 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
 @@ -67,7 +67,7 @@
@@ -160,16 +160,8 @@ index 7c34c967..c8bb684a 100644
 -    <release date="2023-08-30" version="1.15.2">
 -      <description>
 -        <p>This is a bugfix release. It provides an important stability fix regarding feed parsing. Kudos to Rich Coe for debugging and fixing the issue!</p>
-+        <p>This release brings smaller improvements for the 1.16 release line</p>
-+        <p>Pane position should now be properly restored after restart. Before the did change to arbitrary versions
-+        due to some race condition in the Liferea GUI setup sequence.</p>
-+        <p>There is a new "Print" action under "Tools" which allows printing the currently active browser/headline view.</p>
-+        <p>Next there is a change to "Advanced" subscribing. In the past the "Advanced" button
-+        did allow you to specify filters and special feed sources. Now the "Advanced" button
-+        launches the complete feed properties dialog. This way you can configure all options
-+        before subscribing to the feed.</p>
-         <p>Changes:</p>
-         <ul>
+-        <p>Changes:</p>
+-        <ul>
 -          <li>Fixes #1291: Feed parsing is broken (Rich Coe)</li>
 -        </ul>
 -      </description>
@@ -255,11 +247,17 @@ index 7c34c967..c8bb684a 100644
 -    <release date="2023-01-10" version="1.14.0">
 -      <description>
 -        <p>Features introduced with 1.14:</p>
--        <p>
++        <p>This is a bugfix release fixing regressions in 1.16.3 please upgrade!</p>
+         <p>
 -           Many thanks to all the contributors and package maintainers that made this possible!
--        </p>
--        <p>Changes:</p>
--        <ul>
++          Fixes a regression introduced in 1.16.3 that broken newsbins.
++          The "type" attribute in the exported OPML was wrong. If you
++          are affected please manually change "type" for your newsbins
++          back to "newsbin" in the OPML file usually
++          ~/.config/liferea/feedlist.opml.
+         </p>
+         <p>Changes:</p>
+         <ul>
 -          <li>New 'Reader mode' preference that allows stripping all web content</li>
 -          <li>Implement support for Webkits Intelligent Tracking Protection</li>
 -          <li>New progress bar when loading websites</li>
@@ -318,15 +316,13 @@ index 7c34c967..c8bb684a 100644
 -          <li>Dropped Atom 0.2/0.3 (aka Pie) support</li>
 -          <li>Dropped blogChannel namespace support</li>
 -          <li>Dropped photo namespace support</li>
-+          <li>Rewrite GtkPaned position restoration to GSettings bindings</li>
-+          <li>Add print support, new menu option in 'Tools'</li>
-+          <li>Show full feed properties dialog on 'Advanced' subscribe</li>
-+          <li>Automatically determine girepository version to use</li>
++          <li>Fixes #1423 regression in main window geometry restoration</li>
++          <li>Fixes #1454 deprecated icon in headerbar plugin</li>
          </ul>
        </description>
      </release>
 -    <release date="2022-07-26" version="1.13.9">
-+    <release date="2025-08-28" version="1.16.2">
++    <release date="2025-09-05" version="1.16.3">
        <description>
 -        <p>This will be the last unstable release before the first 1.14 release candidate. It contains
 -         bugfixes and a generalization of the Google Reader API implementation we already had
@@ -353,9 +349,14 @@ index 7c34c967..c8bb684a 100644
 -           Please give feedback how you like the change, especially the rather small padding left of the
 -           favicon column (when in wide mode)!
 -        </p>
-+        <p>This is a bugfix release for 1.16. It also introduces smaller improvements
-+        like a standard GTK shortcuts dialog accessible with the Ctrl-? hotkey, F1 now
-+        points to the help pages.</p>
++        <p>This release brings smaller improvements for the 1.16 release line</p>
++        <p>Pane position should now be properly restored after restart. Before the did change to arbitrary versions
++        due to some race condition in the Liferea GUI setup sequence.</p>
++        <p>There is a new "Print" action under "Tools" which allows printing the currently active browser/headline view.</p>
++        <p>Next there is a change to "Advanced" subscribing. In the past the "Advanced" button
++        did allow you to specify filters and special feed sources. Now the "Advanced" button
++        launches the complete feed properties dialog. This way you can configure all options
++        before subscribing to the feed.</p>
          <p>Changes:</p>
          <ul>
 -          <li>Update to Readability.js 0.41 (better image and table handling) (Lars Windolf)</li>
@@ -374,13 +375,10 @@ index 7c34c967..c8bb684a 100644
 -          <li>Fixes #1111: wrong base URI in reader mode (Lars Windolf)</li>
 -          <li>Fixes #1112: Image duplication caused by feeds providing an image link which is also in the item description as additional metadata. (Lars Windolf)</li>
 -          <li>Update of Dutch translation (Gert-dev)</li>
-+          <li>Fix #1421 "Mark all as read ?" warning dialog does not appear on middle-click</li>
-+          <li>Fixes #904: charset related issue with links</li>
-+          <li>Fixes crash when subscribing with "Discover feeds"</li>
-+          <li>URL bar is now hidden for special help tabs</li>
-+          <li>Removes outdated FAQ menu entry</li>
-+          <li>GtkShortCutsWindow is now used for displaying hotkeys, new hotkey is Ctrl-?</li>
-+          <li>Fixes incorrectly emitting "move-cursor" signal in GtkTreeView</li>
++          <li>Rewrite GtkPaned position restoration to GSettings bindings</li>
++          <li>Add print support, new menu option in 'Tools'</li>
++          <li>Show full feed properties dialog on 'Advanced' subscribe</li>
++          <li>Automatically determine girepository version to use</li>
          </ul>
        </description>
      </release>
