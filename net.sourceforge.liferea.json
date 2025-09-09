@@ -80,15 +80,14 @@
             "name": "liferea",
             "post-install": [
                 "install -Dm0755 liferea.sh ${FLATPAK_DEST}/bin/liferea.sh",
-                "desktop-file-edit --set-key=\"Exec\" --set-value=\"liferea.sh %U\" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
-                "install -Dm0644 emblem-ok-symbolic.svg ${FLATPAK_DEST}/share/icons/emblem-ok-symbolic.svg"
+                "desktop-file-edit --set-key=\"Exec\" --set-value=\"liferea.sh %U\" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/lwindolf/liferea.git",
-                    "tag": "v1.16.3",
-                    "commit": "09bb60b6439bbcbce51e415944ae3e7d9e7f38b8"
+                    "tag": "v1.16.4",
+                    "commit": "ae8ad4d045b0c915892264c52a893379146cfb6a"
                 },
                 {
                     "type": "patch",
@@ -100,10 +99,6 @@
                 {
                     "type": "file",
                     "path": "liferea.sh"
-                },
-                {
-                    "type": "file",
-                    "path": "icons/emblem-ok-symbolic.svg"
                 }
             ]
         }
