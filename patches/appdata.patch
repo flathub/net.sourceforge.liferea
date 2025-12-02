@@ -1,5 +1,5 @@
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index 7c34c967..d8b82740 100644
+index 7c34c967..ce1062b2 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
 @@ -67,7 +67,7 @@
@@ -11,12 +11,12 @@ index 7c34c967..d8b82740 100644
    <url type="help">https://lzone.de/liferea/help1140/topics_en.html</url>
    <url type="translate">https://github.com/lwindolf/liferea?tab=readme-ov-file#new-translations</url>
    <translation type="gettext">liferea</translation>
-@@ -77,357 +77,33 @@
+@@ -77,357 +77,51 @@
      <color type="primary" scheme_preference="dark">#64647D</color>
    </branding>
    <releases>
 -    <release date="2025-01-25" version="1.15.9">
-+    <release date="2025-09-13" version="1.16.5">
++    <release date="2025-10-31" version="1.16.6">
        <description>
 -        <p>Today sees a new release of Liferea with fixes, translation updates and some major changes.</p>
 -        <p><em>Integrated Download Manager</em></p>
@@ -91,52 +91,64 @@ index 7c34c967..d8b82740 100644
 -        purely with WebkitGTK support. Downloading is still supported by right clicking on those tags.</p>
 -        <p>Finally a long standing issue was improved: when a feed does not provide item titles Liferea now
 -        uses a teaser of the item content as the title. This for example fixes the usability of Mastodon feeds.</p>
--        <p>Changes:</p>
--        <ul>
++        <p>This is a major bug fix release. It addresses a long standing multithreading issue. Please upgrade to benefit from the fix.</p>
+         <p>Changes:</p>
+         <ul>
 -          <li>Add Sec-GPC header support via new preference to prevent user data selling (Lars Windolf)</li>
 -          <li>Drop enclosure list view in favour of embedded HTML5 audio and video elements (Lars Windolf)</li>
 -          <li>Fixes #1332: Improve "*** No title! ***" for items without title (Lars Windolf)</li>
 -          <li>Update appdata for 1.15.6 by (bbhtt)</li>
 -          <li>appdata: Update screenshot captions and remove dead link by (bbhtt)</li>
 -          <li>Allow building with libsoup 3.0.7 by (ittner)</li>
--        </ul>
--      </description>
--    </release>
++          <li>Removes GAsyncQueue usage and uses proper GThreadPools, this significantly speeds up updating and reduces GUI lag a lot</li>
++          <li>Add support for subscribing to phlog gopher listings</li>
++          <li>Add support for gopher URI schema in internal browser</li>
++          <li>Readd incorrectly removed reference.css file</li>
++          <li>Dark mode: dimmed images filter gets reset when hovering over image</li>
++          <li>Fixes link rel=alternate/self parsing</li>
++          <li>Fixes frozen HTML page after launching feed:// links</li>
++          <li>Fixes better requiring girepository-2.0</li>
++          <li>Fixes panes too small on start</li>
++          <li>Fixes zoom in from browser context menu broken</li>
+         </ul>
+       </description>
+     </release>
 -    <release date="2024-03-15" version="1.15.6">
--      <description>
++    <release date="2025-09-13" version="1.16.5">
+       <description>
 -        <p>This is a small bugfix release with several translation updates and optimizations for better handling HTML content.</p>
--        <p>Changes:</p>
--        <ul>
++        <p>This is a bugfix release for 1.16. Please upgrade.</p>
+         <p>Changes:</p>
+         <ul>
 -          <li>Automatically drop empty content elements (e.g. placeholders for images/iframes/ads not loaded)</li>
 -          <li>Automatically set inline SVG sizes from viewBox attribute to prevent max-width SVGs</li>
 -          <li>Hide <code> nav </code> elements extracted by HTML5 content extraction</li>
 -          <li>Remove G_REGEX_OPTIMIZE flag from DHTML stripping regex handling as valgrind reports memory errors with this.</li>
 -          <li>src/node_type.h: add #include <code>libxml/tree.h</code> for xmlNodePtr type (@trofi)</li>
--        </ul>
--      </description>
--    </release>
--    <release date="2023-12-24" version="1.15.5">
--      <description>
--        <p>This release brings small improvements to the trayicon plugin and content filtering
--        using DOMPurify which should increase security against XSS attacks via feeds providing
--        rich HTML content.</p>
-+        <p>This is a bugfix release for 1.16. Please upgrade.</p>
-         <p>Changes:</p>
-         <ul>
--          <li>Remove Mate workaround from trayicon plugin (Yuri Konotopov)</li>
--          <li>Set prgname to match application id (needed for KDE) (bbhtt)</li>
--          <li>Support XDG_CONFIG_HOME for trayicon plugoin config (bbhtt)</li>
--          <li>Update Readability.js to recent version (Lars Windolf)</li>
--          <li>Added DOMPurify.js for content filtering (Lars Windolf)</li>
 +          <li>Fixes a crash on subscribing when at least one news bin does exist</li>
 +          <li>Fixes #1455 crash on viewing items with comment feeds</li>
 +          <li>Fix input field vertical expand and margins in several dialogs</li>
          </ul>
        </description>
      </release>
--    <release date="2023-10-23" version="1.15.4">
+-    <release date="2023-12-24" version="1.15.5">
 +    <release date="2025-09-05" version="1.16.4">
        <description>
+-        <p>This release brings small improvements to the trayicon plugin and content filtering
+-        using DOMPurify which should increase security against XSS attacks via feeds providing
+-        rich HTML content.</p>
+-        <p>Changes:</p>
+-        <ul>
+-          <li>Remove Mate workaround from trayicon plugin (Yuri Konotopov)</li>
+-          <li>Set prgname to match application id (needed for KDE) (bbhtt)</li>
+-          <li>Support XDG_CONFIG_HOME for trayicon plugoin config (bbhtt)</li>
+-          <li>Update Readability.js to recent version (Lars Windolf)</li>
+-          <li>Added DOMPurify.js for content filtering (Lars Windolf)</li>
+-        </ul>
+-      </description>
+-    </release>
+-    <release date="2023-10-23" version="1.15.4">
+-      <description>
 -        <p>This release brings small fixes and a rework of the trayicon plugin</p>
 -        <p>Thanks to the work of Yuri Konotopov the trayicon plugin now supports AppIndicator
 -        and libayatana. The important difference here is that the new item counter can be shown
