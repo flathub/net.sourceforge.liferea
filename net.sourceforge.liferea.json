@@ -5,7 +5,6 @@
     "sdk": "org.gnome.Sdk",
     "command": "liferea.sh",
     "cleanup": [
-        "/include",
         "/lib/pkgconfig",
         "/share/pkgconfig",
         "/share/aclocal",
