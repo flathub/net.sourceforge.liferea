@@ -1,8 +1,34 @@
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index 7c34c967..09c8abb1 100644
+index 7c34c967..67441dbf 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
-@@ -67,7 +67,7 @@
+@@ -15,16 +15,21 @@
+   <update_contact>lars.windolf_at_gmx.de</update_contact>
+   <summary>Keep up with your feeds</summary>
+   <description>
+-    <p>Liferea is a feed reader/news aggregator that brings together all of the content from your favorite subscriptions
+-    into a simple interface that makes it easy to organize and browse feeds. Its GUI is similar to a desktop mail/news
+-    client, with an embedded web browser.
++    <p>Liferea is a feed reader/news aggregator that brings together
++    all of the content from your favorite subscriptions into a simple
++    interface that makes it easy to organize and browse feeds. Its GUI
++    is similar to a desktop mail/news client, with an embedded web
++    browser.
+     </p>
+     <p>Distinguishing features:</p>
+     <ul>
+       <li>Read articles when offline</li>
+       <li>Force fetch full article text using HTML5 extraction</li>
+       <li>Subscribe to HTML5 websites that do not even have a feed!</li>
+-      <li>Synchronizes with Google Reader API (TheOldReader, FreshRSS, FeedHQ, Miniflux, ...)</li>
++      <li>
++        Synchronizes with Google Reader API including TheOldReader,
++        FreshRSS, FeedHQ, Miniflux etc.
++      </li>
+       <li>Synchronizes with Reedah</li>
+       <li>Synchronizes with TinyTinyRSS</li>
+       <li>Permanently save headlines in news bins</li>
+@@ -67,7 +72,7 @@
      </screenshot>
    </screenshots>
    <url type="bugtracker">https://github.com/lwindolf/liferea/issues/new</url>
@@ -11,7 +37,7 @@ index 7c34c967..09c8abb1 100644
    <url type="help">https://lzone.de/liferea/help1140/topics_en.html</url>
    <url type="translate">https://github.com/lwindolf/liferea?tab=readme-ov-file#new-translations</url>
    <translation type="gettext">liferea</translation>
-@@ -77,357 +77,71 @@
+@@ -77,357 +82,27 @@
      <color type="primary" scheme_preference="dark">#64647D</color>
    </branding>
    <releases>
@@ -65,17 +91,25 @@ index 7c34c967..09c8abb1 100644
 -          <li>Getting rid of XSLT in favor of using Handlebars.js (Lars Windolf)</li>
 -          <li>Updated Czech translation (Amereyeu)</li>
 -          <li>Updated Albanian translation (Besnik Bleta)</li>
-+  <release date="2026-05-02" version="1.16.9">
++  <release version="1.16.11" type="stable" date="2025-06-11">
 +    <description>
 +      <p>
-+        This is a bugfix release for 1.16. If you use online accounts (TinyTinyRSS, Miniflux, FreshRSS... )
-+        with Liferea please upgrade.
++        This is a security bugfix release. Please urgently upgrade if
++        you use Liferea with Reedah or TheOldReader sync.
 +      </p>
-+      <p>Changes:</p>
 +      <ul>
-+        <li>Fixes a regression that breaks using online accounts</li>
-+        <li>Fixes a regression when subscribing to local files</li>
-+        <li>Fixes some memory leaks</li>
++        <li>
++          Fixes a long-standing security bug causing unencrypted
++          connections when fetching feed content from Reedah and
++          TheOldReader
++        </li>
++        <li>
++          Fixes TinyTinyRSS not working due to Content-Encoding header
++          not indicating JSON
++        </li>
++        <li>
++          Fixes outdated feedburner URL in default feed list OPML
++        </li>
        </ul>
 -      </description>
 -    </release>
@@ -370,60 +404,7 @@ index 7c34c967..09c8abb1 100644
 -          <li>Update of Dutch translation (Gert-dev)</li>
 -        </ul>
 -      </description>
-+    </description>
-+  </release>
-+  <release date="2026-04-25" version="1.16.8">
-+    <description>
-+      <p>
-+        This is a new stable Liferea 1.16 release with performance improvements, new customization
-+        capabilities, and several bugfixes. Feed updating has been adjusted to avoid unintended GUI
-+        blocking that previously caused UI freezes during initial updates.
-+      </p>
-+      <p>
-+        Rendering can now be customized via JavaScript hooks, allowing modification of data before
-+        rendering and DOM manipulation after rendering. Contrast in both light and dark themes has
-+        also been refined for better readability. Additionally, Liferea now supports blogroll
-+        discovery via the source namespace and HTML link tags, automatically fetching and displaying
-+        OPML blogrolls for feeds.
-+      </p>
-+      <p>Changes:</p>
-+      <ul>
-+        <li>Improve feed updating to reduce GUI blocking and UI freezes</li>
-+        <li>Add JavaScript rendering hooks via ~/.config/liferea/user.js</li>
-+        <li>Add blogroll support via &lt;source:blogroll&gt; and &lt;link rel="blogroll"&gt;</li>
-+        <li>Open “Discover Feeds” in external browser due to CORS/ESM constraints</li>
-+        <li>Improve contrast (stronger in light theme, reduced in dark theme)</li>
-+        <li>Reimplement category display and improve metadata layout</li>
-+        <li>Fix UI saturation during feed updates affecting interaction</li>
-+        <li>Fix extraneous whitespace in item header</li>
-+        <li>Fix memory leak when loading subscription metadata</li>
-+        <li>Apply security updates to JavaScript modules</li>
-+        <li>Update Spanish translation</li>
-+      </ul>
-+    </description>
-+  </release>
-+  <release date="2025-12-27" version="1.16.7">
-+    <description>
-+      <p>
-+        This is a new bugfix release. Due to further enshittification at Youtube the video embedding
-+        had to be removed, which is probably a good idea anyway. A bug in the favicon handling was
-+        solved so if you had some missing ones they will surely show up now. There was a visual
-+        improvement to the "Important" label coloring and finally BlueSky feeds will now show a link
-+        to the post, which they were missing due to having no titles (which normally have the link).
-+      </p>
-+      <p>
-+        And last I want to wish everyone a Happy New Year 2026!
-+      </p>
-+      <p>Changes:</p>
-+      <ul>
-+        <li>Drop YouTube video embedding due to “error 153” and general privacy implications</li>
-+        <li>Use white on red instead of black on red for item list "Important" label</li>
-+        <li>Fix Favicons missing for several feeds</li>
-+        <li>Fix bsky.app links not being used</li>
-+        <li>Fixe extracted item content sometimes unexpectedly colored</li>
-+      </ul>
-+    </description>
-     </release>
+-    </release>
 -    <release date="2022-04-05" version="1.13.8"/>
 -    <release date="2021-12-07" version="1.13.7"/>
 -    <release date="2021-05-07" version="1.13.6"/>
@@ -431,5 +412,7 @@ index 7c34c967..09c8abb1 100644
 -    <release date="2020-12-24" version="1.13.4"/>
 -    <release date="2020-10-09" version="1.13.3"/>
 -    <release date="2020-08-28" version="1.13.2"/>
++    </description>
++  </release>
    </releases>
  </component>
