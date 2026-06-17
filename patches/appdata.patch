@@ -1,5 +1,14 @@
+From db4e6c87d8bfb9a675e4b7bfc9ee990c7ecddc73 Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Wed, 17 Jun 2026 06:22:02 +0530
+Subject: [PATCH] Update appdata
+
+---
+ net.sourceforge.liferea.appdata.xml.in | 404 +++----------------------
+ 1 file changed, 48 insertions(+), 356 deletions(-)
+
 diff --git a/net.sourceforge.liferea.appdata.xml.in b/net.sourceforge.liferea.appdata.xml.in
-index 7c34c967..67441dbf 100644
+index 7c34c967..4085a587 100644
 --- a/net.sourceforge.liferea.appdata.xml.in
 +++ b/net.sourceforge.liferea.appdata.xml.in
 @@ -15,16 +15,21 @@
@@ -37,7 +46,7 @@ index 7c34c967..67441dbf 100644
    <url type="help">https://lzone.de/liferea/help1140/topics_en.html</url>
    <url type="translate">https://github.com/lwindolf/liferea?tab=readme-ov-file#new-translations</url>
    <translation type="gettext">liferea</translation>
-@@ -77,357 +82,27 @@
+@@ -77,357 +82,44 @@
      <color type="primary" scheme_preference="dark">#64647D</color>
    </branding>
    <releases>
@@ -91,24 +100,19 @@ index 7c34c967..67441dbf 100644
 -          <li>Getting rid of XSLT in favor of using Handlebars.js (Lars Windolf)</li>
 -          <li>Updated Czech translation (Amereyeu)</li>
 -          <li>Updated Albanian translation (Besnik Bleta)</li>
-+  <release version="1.16.11" type="stable" date="2025-06-11">
++  <release version="1.16.12" type="stable" date="2025-06-17">
 +    <description>
 +      <p>
-+        This is a security bugfix release. Please urgently upgrade if
-+        you use Liferea with Reedah or TheOldReader sync.
++        This is a security bugfix release. Please urgently!
 +      </p>
 +      <ul>
 +        <li>
-+          Fixes a long-standing security bug causing unencrypted
-+          connections when fetching feed content from Reedah and
-+          TheOldReader
++          Fixes a RCE vulnerability when importing OPML files containing
++          script commands.
 +        </li>
 +        <li>
-+          Fixes TinyTinyRSS not working due to Content-Encoding header
-+          not indicating JSON
-+        </li>
-+        <li>
-+          Fixes outdated feedburner URL in default feed list OPML
++          Fixes a RCE vulnerability in the download manager plugin where
++          a command could have been injected into file paths.
 +        </li>
        </ul>
 -      </description>
@@ -414,5 +418,30 @@ index 7c34c967..67441dbf 100644
 -    <release date="2020-08-28" version="1.13.2"/>
 +    </description>
 +  </release>
++  <release version="1.16.11" type="stable" date="2025-06-11">
++    <description>
++      <p>
++        This is a security bugfix release. Please urgently upgrade if
++        you use Liferea with Reedah or TheOldReader sync.
++      </p>
++      <ul>
++        <li>
++          Fixes a long-standing security bug causing unencrypted
++          connections when fetching feed content from Reedah and
++          TheOldReader
++        </li>
++        <li>
++          Fixes TinyTinyRSS not working due to Content-Encoding header
++          not indicating JSON
++        </li>
++        <li>
++          Fixes outdated feedburner URL in default feed list OPML
++        </li>
++      </ul>
++    </description>
++  </release>
    </releases>
  </component>
+-- 
+2.54.0
+
